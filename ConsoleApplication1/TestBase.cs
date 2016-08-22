@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 //delegate
 
-class Program
+class TestBase
 {
     enum EM_aaa : byte
     {
@@ -16,14 +16,14 @@ class Program
         D,
     }
 
-    #region sdfesdf
+    #region test fold the code
  
     void test1()
     {
         bool b = 1 < 3 ? true : false;
         Console.WriteLine("hello{0} world{1}", 123, b); //hello123 worldTrue
         Console.WriteLine("{0}", 1 << 2); //4
-        Console.WriteLine("{0}", (int)Program.EM_aaa.D);//3 
+        Console.WriteLine("{0}", (int)TestBase.EM_aaa.D);//3 
 
         int[] iArr = new int[5] { 1, 2, 3, 4, 5 };
         //for (int i = 0; i < iArr.Length; ++i)

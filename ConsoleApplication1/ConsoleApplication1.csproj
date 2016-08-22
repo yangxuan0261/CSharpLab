@@ -47,6 +47,7 @@
     <Compile Include="TestException.cs" />
     <Compile Include="TestContainer.cs" />
     <Compile Include="TestDelegate.cs" />
+    <Compile Include="TestLambda.cs" />
     <Compile Include="TestOOP.cs" />
     <Compile Include="TestArgs.cs" />
     <Compile Include="TestLog.cs" />

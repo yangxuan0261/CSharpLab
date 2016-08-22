@@ -15,10 +15,17 @@ namespace ConsoleApplication1
 
             //TestLog.test2();
 
-            //TestArgs.test1();
 
-            //TestLambda.test1();
-            TestLambda.test2();
+
+
+
+
+
+            //TestArgs.test1();
+            //TestContainer.test1();
+            //TestContainer.test2();
+            //TestContainer.test3();
+            TestDelegate.test1();
 
             Console.ReadKey();
         }

@@ -21,7 +21,10 @@ namespace ConsoleApplication1
             //TestContainer.test2();
             //TestContainer.test3();
             //TestDelegate.test1();
-            TestDelegate.test2();
+
+            //TestObj.test1();
+            TestBinaryData.test1();
+            TestBinaryData.test2();
 
             Console.ReadKey();
         }

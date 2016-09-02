@@ -23,8 +23,10 @@ namespace ConsoleApplication1
             //TestDelegate.test1();
 
             //TestObj.test1();
-            TestBinaryData.test1();
-            TestBinaryData.test2();
+            //TestBinaryData.test1();
+            //TestBinaryData.test2();
+
+            TestAttribute.test1();
 
             Console.ReadKey();
         }

@@ -52,6 +52,7 @@
     <Compile Include="TestObjMgr.cs" />
     <Compile Include="TestBinaryData.cs" />
     <Compile Include="TestAttribute.cs" />
+    <Compile Include="TestGetSet.cs" />
     <Compile Include="TestOOP.cs" />
     <Compile Include="TestArgs.cs" />
     <Compile Include="TestLog.cs" />

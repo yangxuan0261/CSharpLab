@@ -26,7 +26,8 @@ class TestString
     public static void test3()
     {
         string str = "aaajbbbjccc";
-        string[] sArray = str.Split('j');
+        string sp = "j"; 
+        string[] sArray = str.Split(sp.ToArray<char>());
         foreach (string i in sArray)
             Console.WriteLine("{0}", i);
     }

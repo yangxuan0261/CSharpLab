@@ -27,7 +27,11 @@ namespace ConsoleApplication1
             //TestBinaryData.test2();
 
             //TestAttribute.test1();
-            TestGetSet.test1();
+            //TestGetSet.test1();
+
+            //TestString.test1();
+            //TestString.test2();
+            TestString.test3(); 
 
             Console.ReadKey();
         }

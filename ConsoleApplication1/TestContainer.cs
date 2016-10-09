@@ -286,7 +286,7 @@ class TestContainer
         ht.Add(new Dog(14, "eee"));
 
         //ht.Sort(delegate(Dog d1, Dog d2) { return d1.CompareTo(d2); });
-        ht.Sort(delegate(Dog d1, Dog d2)
+        ht.Sort(delegate(Dog d1, Dog d2) //不需要继承IComparable，实现CompareTo接口
         {
             //单条件排序
             //int ret = Convert.ToInt32(d1.age - d2.age);
@@ -301,7 +301,7 @@ class TestContainer
             Console.WriteLine("--- ret:{0}", ret);
             return ret;
         });
-        //ht.Sort();
+        //ht.Sort(); //需要继承IComparable，实现CompareTo接口
         foreach(var item in ht)
         {
             Console.WriteLine("--- age:{0}, name:{1}", item.age, item.name);

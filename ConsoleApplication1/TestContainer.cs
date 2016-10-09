@@ -260,4 +260,51 @@ class TestContainer
             Console.WriteLine(num);
     }
 
+    public class Dog : IComparable
+    {
+        public Dog(int a, string b) { age = a; name = b; }
+        public int age;
+        public string name;
+
+        public int CompareTo(object obj)
+        {
+            Dog d = (Dog)obj;
+
+            //return Convert.ToInt32(age > d.age);//错误
+            return age.CompareTo(d.age);// 正确
+        }
+    }
+
+    public static void test6()
+    {
+        List<Dog> ht = new List<Dog>();
+        ht.Add(new Dog(12, "aaa"));
+        ht.Add(new Dog(21, "ccc"));
+        ht.Add(new Dog(21, "bbb"));
+        ht.Add(new Dog(32, "ccc"));
+        ht.Add(new Dog(27, "ddd"));
+        ht.Add(new Dog(14, "eee"));
+
+        //ht.Sort(delegate(Dog d1, Dog d2) { return d1.CompareTo(d2); });
+        ht.Sort(delegate(Dog d1, Dog d2)
+        {
+            //单条件排序
+            //int ret = Convert.ToInt32(d1.age - d2.age);
+            //int ret = d1.age - d2.age;
+
+            //多条件排序
+            int ret = d1.age.CompareTo(d2.age); 
+            if (ret == 0)
+            {
+                ret = d1.name.CompareTo(d2.name);
+            }
+            Console.WriteLine("--- ret:{0}", ret);
+            return ret;
+        });
+        //ht.Sort();
+        foreach(var item in ht)
+        {
+            Console.WriteLine("--- age:{0}, name:{1}", item.age, item.name);
+        }
+    }
 }

@@ -363,4 +363,23 @@ class TestContainer
             Console.WriteLine("--- value:{0}", p);
     }
 
+
+    public static void test9()
+    {
+        List<string> ht = new List<string>();
+        ht.Add("aa");
+        ht.Add("bbb");
+        ht.Add("cccc");
+        ht.Add("dd");
+
+        List<string> ht2 = ht.Select((item) => { return "new " + item; }).ToList() ;
+        foreach (var p in ht2)
+            Console.WriteLine("--- value:{0}", p);
+
+        string[] ht3 = ht.Select((item) => { return "new " + item; }).ToArray();
+        foreach (var p in ht3)
+            Console.WriteLine("--- value:{0}", p);
+    }
+
+
 }

@@ -208,6 +208,9 @@ class TestContainer
 
     }
 
+    /// <summary>
+    /// List 删除
+    /// </summary>
     public static void test5()
     {
 
@@ -275,6 +278,9 @@ class TestContainer
         }
     }
 
+    /// <summary>
+    /// List 排序
+    /// </summary>
     public static void test6()
     {
         List<Dog> ht = new List<Dog>();
@@ -285,8 +291,8 @@ class TestContainer
         ht.Add(new Dog(27, "ddd"));
         ht.Add(new Dog(14, "eee"));
 
-        //ht.Sort(delegate(Dog d1, Dog d2) { return d1.CompareTo(d2); });
-        ht.Sort(delegate(Dog d1, Dog d2) //不需要继承IComparable，实现CompareTo接口
+        //不需要继承IComparable，实现CompareTo接口
+        ht.Sort(delegate(Dog d1, Dog d2) 
         {
             //单条件排序
             //int ret = Convert.ToInt32(d1.age - d2.age);
@@ -301,10 +307,60 @@ class TestContainer
             Console.WriteLine("--- ret:{0}", ret);
             return ret;
         });
-        //ht.Sort(); //需要继承IComparable，实现CompareTo接口
+
+        //需要继承IComparable，实现CompareTo接口
+        //ht.Sort(); 
+        //ht.Sort(delegate(Dog d1, Dog d2) { return d1.CompareTo(d2); });
+
         foreach(var item in ht)
         {
             Console.WriteLine("--- age:{0}, name:{1}", item.age, item.name);
         }
     }
+
+    /// <summary>
+    /// Dictionary List 删除
+    /// </summary>
+    public static void test7()
+    {
+        Dictionary<int, string> ht = new Dictionary<int, string>();
+        ht.Add(1, "aa");
+        ht.Add(2, "bbb");
+        ht.Add(3, "cccc");
+        ht.Add(4, "dd");
+
+        int[] keys = ht.Where((p) => p.Value.Length == 2).Select((p) => p.Key).ToArray();
+        for (int i = 0; i < keys.Length; i++)
+            ht.Remove(keys[i]);
+
+        foreach (var p in ht)
+            Console.WriteLine("--- key:{0}, value:{1}", p.Key, p.Value);
+    }
+
+    public static void test8()
+    {
+        List<string> ht = new List<string>();
+        ht.Add("aa");
+        ht.Add("bbb");
+        ht.Add("cccc");
+        ht.Add("dd");
+
+        //string[] keys = ht.Where((p) => p.Length == 2).Select((p) => p).ToArray();
+        string[] keys = ht.Where((p, index) => {
+            if (p.Length == 2)
+            {
+                Console.WriteLine("--- index:{0}", index);
+                return true;
+            }
+            else
+                return false;
+        }).ToArray();
+
+        for (int i = 0; i < keys.Length; i++)
+            ht.Remove(keys[i]);
+
+        foreach (var p in ht)
+            Console.WriteLine("--- value:{0}", p);
+    }
+
 }

@@ -22,7 +22,9 @@ namespace ConsoleApplication1
             //TestContainer.test3();
             //TestContainer.test4();
             //TestContainer.test5();
-            TestContainer.test6();
+            //TestContainer.test6();
+            //TestContainer.test7();
+            TestContainer.test8();
             //TestDelegate.test1();
 
             //TestObj.test1();

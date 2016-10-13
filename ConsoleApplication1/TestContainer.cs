@@ -376,8 +376,17 @@ class TestContainer
         foreach (var p in ht2)
             Console.WriteLine("--- value:{0}", p);
 
+        Console.WriteLine("");
         string[] ht3 = ht.Select((item) => { return "new " + item; }).ToArray();
         foreach (var p in ht3)
+            Console.WriteLine("--- value:{0}", p);
+
+        Console.WriteLine("");
+        var result = from i in ht
+                     where i.Length > 2
+                     select i;
+        var ht4 = result.ToList();
+        foreach (var p in ht4)
             Console.WriteLine("--- value:{0}", p);
     }
 

@@ -31,4 +31,60 @@ class TestString
         foreach (string i in sArray)
             Console.WriteLine("{0}", i);
     }
+
+    /// <summary>
+    /// string int
+    /// </summary>
+    public static void test4() 
+    {
+        int varInt = 1;
+        string varString = Convert.ToString(varInt);
+        string varString2 = varInt.ToString();
+        Console.WriteLine("--- varString2:{0}", varString2);
+
+        string str = string.Empty;
+        str = "123";
+        int result = int.Parse(str);
+        Console.WriteLine("--- result:{0}", result);
+
+        string str2 = string.Empty;
+        str2 = "xyz";
+        int result2;
+        int.TryParse(str2, out result2);
+        Console.WriteLine("--- result2:{0}", result2);
+    }
+
+    /// <summary>
+    /// string float
+    /// </summary>
+    public static void test5()
+    {
+        float varFloat = 11.22f;
+        string varString2 = varFloat.ToString();
+        Console.WriteLine("--- varString2:{0}", varString2);
+
+        string str2 = "33.44";
+        float result = float.Parse(str2);
+        Console.WriteLine("--- result:{0}", result);
+    }
+
+    /// <summary>
+    /// float int
+    /// </summary>
+    public static void test6()
+    {
+        float f1 = 11.22f;
+        int i1 = Convert.ToInt32(f1);
+        Console.WriteLine("--- result:{0}", i1);
+
+        int i2 = 33;
+        float f2 = Convert.ToSingle(i2);
+        Console.WriteLine("--- result:{0}", f2);
+    }
+
+    public static void test7()
+    {
+
+    }
+
 }

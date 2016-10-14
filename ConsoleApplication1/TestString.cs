@@ -7,6 +7,9 @@ using System.Text.RegularExpressions;
 
 class TestString
 {
+    /// <summary>
+    /// Regex Split
+    /// </summary>
     public static void test1()
     {
         string str = "aaajsbbbjsccc";
@@ -15,6 +18,9 @@ class TestString
             Console.WriteLine("{0}", i);
     }
 
+    /// <summary>
+    /// string Split
+    /// </summary>
     public static void test2()
     {
         string str = "aaajbbbscccjdddseee";
@@ -23,6 +29,9 @@ class TestString
             Console.WriteLine("{0}", i);
     }
 
+    /// <summary>
+    /// string Split
+    /// </summary>
     public static void test3()
     {
         string str = "aaajbbbjccc";

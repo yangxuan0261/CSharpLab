@@ -47,12 +47,14 @@
     <Compile Include="TestException.cs" />
     <Compile Include="TestContainer.cs" />
     <Compile Include="TestDelegate.cs" />
+    <Compile Include="TestGC.cs" />
     <Compile Include="TestLambda.cs" />
     <Compile Include="TestObj.cs" />
     <Compile Include="TestObjMgr.cs" />
     <Compile Include="TestBinaryData.cs" />
     <Compile Include="TestAttribute.cs" />
     <Compile Include="TestGetSet.cs" />
+    <Compile Include="TestUsing.cs" />
     <Compile Include="TestString.cs" />
     <Compile Include="TestOOP.cs" />
     <Compile Include="TestArgs.cs" />

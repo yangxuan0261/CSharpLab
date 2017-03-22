@@ -213,14 +213,14 @@ class TestContainer
     /// </summary>
     public static void test5()
     {
-
-
         List<int> ht = new List<int>();
         ht.Add(1);
         ht.Add(2);
         ht.Add(3);
         ht.Add(4);
         ht.Add(5);
+        ht.Add(6);
+        ht.Add(7);
 
         for (int i=0;i<ht.Count;++i)
         {
@@ -251,6 +251,8 @@ class TestContainer
                 i -= 1;
             }
         }
+
+        //ht.RemoveRange(0, 2);
 
         //错误的删除姿势
         //foreach (var num in ht)
@@ -337,7 +339,10 @@ class TestContainer
             Console.WriteLine("--- key:{0}, value:{1}", p.Key, p.Value);
     }
 
-    public static void test8()
+    /// <summary>
+    /// 队列筛选
+    /// </summary>
+    public static void d()
     {
         List<string> ht = new List<string>();
         ht.Add("aa");
@@ -391,4 +396,37 @@ class TestContainer
     }
 
 
+    /// <summary>
+    /// 两个队列去重
+    /// </summary>
+    public static void 去()
+    {
+        List<string> destroyList = new List<string>();
+        destroyList.Add("aa");
+        destroyList.Add("bbb");
+        destroyList.Add("cccc");
+        destroyList.Add("dd");
+
+        List<string> notAliveList = new List<string>();
+        notAliveList.Add("bbb");
+        notAliveList.Add("cccc");
+        //ht2.Add("www");
+        //ht2.Add("zzz");
+
+        HashSet<string> ht3 = new HashSet<string>();
+        HashSet<string> diffList = new HashSet<string>();
+
+        foreach (var v in destroyList)
+            ht3.Add(v);
+
+        foreach (var v in notAliveList)
+        {
+            if (ht3.Contains(v))
+                ht3.Remove(v);
+        }
+
+        foreach (var v in ht3)
+            Console.WriteLine("--- value:{0}", v);
+
+    }
 }

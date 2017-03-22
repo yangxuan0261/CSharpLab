@@ -26,7 +26,8 @@ namespace ConsoleApplication1
             //TestContainer.test7();
             //TestContainer.test8();
             //TestContainer.test9();
-            //TestDelegate.test1();
+            //TestContainer.test10();
+            //TestDelegate.test10();
 
             //TestObj.test1();
             //TestBinaryData.test1();
@@ -40,8 +41,10 @@ namespace ConsoleApplication1
             //TestString.test3(); 
             //TestString.test4();
             //TestString.test5();
-            TestString.test6(); 
+            //TestString.test6(); 
 
+            //TestGC.test1() ;
+            TestUsing.test1();
             Console.ReadKey();
         }
     }

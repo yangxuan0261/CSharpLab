@@ -24,6 +24,6 @@ class TestAttribute
     public static void test1()
     {
         //Human.func1();
-        int a = 1;
+        //int a = 1;
     }
 }

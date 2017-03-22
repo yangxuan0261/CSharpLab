@@ -93,7 +93,12 @@ class TestString
 
     public static void test7()
     {
-
+        string str = String.Format("[{0}]-avgTime:{1:0.00}ms, avgSize:{2:0.00}kb, cnt:{3}\n"
+    , "aaa"
+    , 123.456f
+    , 987.654f
+    , 666);
+        Console.WriteLine(str);
     }
 
 }

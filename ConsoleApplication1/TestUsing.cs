@@ -28,6 +28,7 @@ class TestUsing {
         ~MyBase() {
             // Simply call Dispose(false).
             Dispose(false);
+            Console.WriteLine("--- ~MyBase:{0}", mName);
         }
     };
 
@@ -57,6 +58,7 @@ class TestUsing {
     /// 实际应用如 FileStream 等，不需要去主动调用 Close()
     /// </summary>
     public static void test1() {
+
         Console.WriteLine("---test1 begin");
 
         using (MyDerived mt1 = new MyDerived("hello"),

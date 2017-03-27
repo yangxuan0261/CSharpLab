@@ -33,7 +33,7 @@ namespace ConsoleApplication1
             //TestBinaryData.test1();
             //TestBinaryData.test2();
 
-            //TestAttribute.test1();
+            TestAttribute.test1();
             //TestGetSet.test1();
 
             //TestString.test1();
@@ -44,7 +44,7 @@ namespace ConsoleApplication1
             //TestString.test6(); 
 
             //TestGC.test1() ;
-            TestUsing.test1();
+            //TestUsing.test1();
             Console.ReadKey();
         }
     }

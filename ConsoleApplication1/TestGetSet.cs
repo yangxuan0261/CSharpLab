@@ -4,15 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-class TestGetSet
-{
+class TestGetSet {
 
 
-    class AAA
-    {
+    class AAA {
         int mA = 0;
-        public int a
-        {
+        public int a {
             get { return mA; }
             set { mA = value; }
         }
@@ -20,8 +17,7 @@ class TestGetSet
 
 
 
-    public static void test1()
-    {
+    public static void test1() {
         AAA obj = new AAA();
         obj.a = 123;
         Console.WriteLine("--- a:{0}", obj.a);

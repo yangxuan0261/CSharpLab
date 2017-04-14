@@ -4,12 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApplication1
-{
-    class a_main
-    {
-        static void Main(string[] args)
-        {
+namespace ConsoleApplication1 {
+    class a_main {
+        static void Main(string[] args) {
             //TestGeneric.test1();
             //TestOOP.test1();
 
@@ -27,6 +24,7 @@ namespace ConsoleApplication1
             //TestContainer.test8();
             //TestContainer.test9();
             //TestContainer.test10();
+            TestContainer.test11();
             //TestDelegate.test10();
 
             //TestObj.test1();
@@ -45,7 +43,7 @@ namespace ConsoleApplication1
 
             //TestGC.test1() ;
             //TestUsing.test1();
-            TestTime.test1();
+            //TestTime.test1();
             Console.ReadKey();
         }
     }

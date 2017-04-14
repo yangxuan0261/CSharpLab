@@ -5,10 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 
-class TestBinaryData
-{
-    public static string getPath() 
-    {
+class TestBinaryData {
+    public static string getPath() {
         string dir = System.IO.Directory.GetCurrentDirectory();
         string filepath = dir + @"\data.bin";
 
@@ -16,8 +14,7 @@ class TestBinaryData
         return filepath;
     }
 
-    public static void write()
-    {
+    public static void write() {
         string filepath = getPath();
         if (File.Exists(filepath))
             File.Delete(filepath);
@@ -38,8 +35,7 @@ class TestBinaryData
         fileStream.Close();
     }
 
-    public static void read()
-    {
+    public static void read() {
         string filepath = getPath();
         if (!File.Exists(filepath))
             return;
@@ -66,8 +62,7 @@ class TestBinaryData
 
     //-----------------------
 
-    public static string getPath222()
-    {
+    public static string getPath222() {
         string dir = System.IO.Directory.GetCurrentDirectory();
         string filepath = dir + @"\dataSeed.bin";
 
@@ -75,8 +70,7 @@ class TestBinaryData
         return filepath;
     }
 
-    public static void write222()
-    {
+    public static void write222() {
         string filepath = getPath222();
         if (File.Exists(filepath))
             File.Delete(filepath);
@@ -108,8 +102,7 @@ class TestBinaryData
         fileStream.Close();
     }
 
-    public static void read222()
-    {
+    public static void read222() {
         string filepath = getPath222();
         if (!File.Exists(filepath))
             return;
@@ -146,16 +139,14 @@ class TestBinaryData
     /// <summary>
     /// no encode seed
     /// </summary>
-    public static void test1()
-    {
+    public static void test1() {
         //write();
         read();
     }
     /// <summary>
     /// has encode seed
     /// </summary>
-    public static void test2()
-    {
+    public static void test2() {
         //write222();
         read222();
     }

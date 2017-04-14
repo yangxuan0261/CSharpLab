@@ -4,19 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-class TestContainer
-{
-    public static void print<K, V>(Dictionary<K, V> _dir)
-    {
+class TestContainer {
+    public static void print<K, V>(Dictionary<K, V> _dir) {
         Console.WriteLine("");
-        foreach (KeyValuePair<K, V> kvp in _dir)
-        {
+        foreach (KeyValuePair<K, V> kvp in _dir) {
             Console.WriteLine("--- key={0},value={1}", kvp.Key, kvp.Value);
         }
     }
 
-    public static void test1()
-    {
+    public static void test1() {
         Dictionary<string, string> myDic = new Dictionary<string, string>();
         myDic.Add("aaa", "111");
         myDic.Add("bbb", "222");
@@ -24,12 +20,9 @@ class TestContainer
         myDic.Add("ddd", "444");
 
         print(myDic);
-        try
-        {
+        try {
             myDic.Add("ddd", "ddd");
-        }
-        catch (ArgumentException ex)
-        {
+        } catch (ArgumentException ex) {
             Console.WriteLine("此键已经存在：" + ex.Message);
         }
         //解决add()异常的方法是用ContainsKey()方法来判断键是否存在
@@ -45,12 +38,9 @@ class TestContainer
         print(myDic);
 
         //使用索引器来取值时，如果键不存在就会引发异常
-        try
-        {
+        try {
             Console.WriteLine("不存在的键fff的键值为：" + myDic["fff"]);
-        }
-        catch (KeyNotFoundException ex)
-        {
+        } catch (KeyNotFoundException ex) {
             Console.WriteLine("没有找到键引发异常：" + ex.Message);
         }
 
@@ -68,16 +58,14 @@ class TestContainer
 
         //foreach values
         Console.WriteLine("\n--- foreach values");
-        foreach (string s in myDic.Values)
-        {
+        foreach (string s in myDic.Values) {
             Console.WriteLine("--- value={0}", s);
         }
 
         //foreach keys
         Console.WriteLine("\n--- foreach keys");
         var keys = myDic.Keys;
-        foreach (string s in keys)
-        {
+        foreach (string s in keys) {
             Console.WriteLine("--- key={0}", s);
         }
 
@@ -106,8 +94,7 @@ class TestContainer
         myDic.Add("yy", "yyyyyy");
         Console.WriteLine("--- size={0}", myDic.Count());
         LinkedList<string> tmpList = new LinkedList<string>();
-        foreach (string k in myDic.Keys)
-        {
+        foreach (string k in myDic.Keys) {
             if (k.Count() == 2)
                 tmpList.AddFirst(k);
         }
@@ -119,8 +106,7 @@ class TestContainer
         //lambda find
         myDic.Add("i", "iiii");
         myDic.Add("o", "oooo");
-        IEnumerable<KeyValuePair<string, string>> result = myDic.Where(_pair =>
-        {
+        IEnumerable<KeyValuePair<string, string>> result = myDic.Where(_pair => {
             if (_pair.Key.Count() == 1)
                 return true;
             else
@@ -132,8 +118,7 @@ class TestContainer
             Console.WriteLine("--- ret2, key={0}, value={1}", ret2.Current.Key, ret2.Current.Value);
     }
 
-    public static void test2()
-    {
+    public static void test2() {
         List<int> mylist = new List<int>();
         mylist.Add(111);
         mylist.Add(222);
@@ -143,8 +128,7 @@ class TestContainer
     /// <summary>
     /// test list sort
     /// </summary>
-    public static void test3()
-    {
+    public static void test3() {
         Dictionary<int, string> mydic = new Dictionary<int, string>();
         mydic.Add(8, "888");
         mydic.Add(5, "555");
@@ -158,10 +142,8 @@ class TestContainer
             Console.WriteLine("--- key:{0}, value:{1}", k, mydic[k]);
     }
 
-    struct Info
-    {
-        public Info(int _a, string _b)
-        {
+    struct Info {
+        public Info(int _a, string _b) {
             num = _a;
             name = _b;
         }
@@ -169,8 +151,7 @@ class TestContainer
         public string name;
     }
 
-    public static void test4()
-    {
+    public static void test4() {
         Dictionary<int, Info> ht = new Dictionary<int, Info>();
         ht.Add(1, new Info(1, "aaa"));
         ht.Add(2, new Info(2, "asd"));
@@ -188,21 +169,17 @@ class TestContainer
 
         //要删除的东西的key丢在临时容器tmp，然后遍历tmp，remove
         List<int> tmp = new List<int>();
-        foreach (var w in ht)
-        {
-            if (w.Value.name == "asd")
-            {
+        foreach (var w in ht) {
+            if (w.Value.name == "asd") {
                 tmp.Add(w.Key);
             }
         }
 
-        foreach (var key in tmp)
-        {
+        foreach (var key in tmp) {
             ht.Remove(key);
         }
 
-        foreach (var w in ht)
-        {
+        foreach (var w in ht) {
             Console.WriteLine("--- key:{0}, value:{1}", w.Key, w.Value.name);
         }
 
@@ -211,8 +188,7 @@ class TestContainer
     /// <summary>
     /// List 删除
     /// </summary>
-    public static void test5()
-    {
+    public static void test5() {
         List<int> ht = new List<int>();
         ht.Add(1);
         ht.Add(2);
@@ -222,8 +198,7 @@ class TestContainer
         ht.Add(6);
         ht.Add(7);
 
-        for (int i=0;i<ht.Count;++i)
-        {
+        for (int i = 0; i < ht.Count; ++i) {
             /*
             if (ht[i] == 3) //正确的删除姿势
             {
@@ -265,14 +240,12 @@ class TestContainer
             Console.WriteLine(num);
     }
 
-    public class Dog : IComparable
-    {
+    public class Dog : IComparable {
         public Dog(int a, string b) { age = a; name = b; }
         public int age;
         public string name;
 
-        public int CompareTo(object obj)
-        {
+        public int CompareTo(object obj) {
             Dog d = (Dog)obj;
 
             //return Convert.ToInt32(age > d.age);//错误
@@ -283,8 +256,7 @@ class TestContainer
     /// <summary>
     /// List 排序
     /// </summary>
-    public static void test6()
-    {
+    public static void test6() {
         List<Dog> ht = new List<Dog>();
         ht.Add(new Dog(12, "aaa"));
         ht.Add(new Dog(21, "ccc"));
@@ -294,16 +266,14 @@ class TestContainer
         ht.Add(new Dog(14, "eee"));
 
         //不需要继承IComparable，实现CompareTo接口
-        ht.Sort(delegate(Dog d1, Dog d2) 
-        {
+        ht.Sort(delegate (Dog d1, Dog d2) {
             //单条件排序
             //int ret = Convert.ToInt32(d1.age - d2.age);
             //int ret = d1.age - d2.age;
 
             //多条件排序
-            int ret = d1.age.CompareTo(d2.age); 
-            if (ret == 0)
-            {
+            int ret = d1.age.CompareTo(d2.age);
+            if (ret == 0) {
                 ret = d1.name.CompareTo(d2.name);
             }
             Console.WriteLine("--- ret:{0}", ret);
@@ -314,8 +284,7 @@ class TestContainer
         //ht.Sort(); 
         //ht.Sort(delegate(Dog d1, Dog d2) { return d1.CompareTo(d2); });
 
-        foreach(var item in ht)
-        {
+        foreach (var item in ht) {
             Console.WriteLine("--- age:{0}, name:{1}", item.age, item.name);
         }
     }
@@ -323,8 +292,7 @@ class TestContainer
     /// <summary>
     /// Dictionary List 删除
     /// </summary>
-    public static void test7()
-    {
+    public static void test7() {
         Dictionary<int, string> ht = new Dictionary<int, string>();
         ht.Add(1, "aa");
         ht.Add(2, "bbb");
@@ -342,8 +310,7 @@ class TestContainer
     /// <summary>
     /// 队列筛选
     /// </summary>
-    public static void d()
-    {
+    public static void d() {
         List<string> ht = new List<string>();
         ht.Add("aa");
         ht.Add("bbb");
@@ -352,12 +319,10 @@ class TestContainer
 
         //string[] keys = ht.Where((p) => p.Length == 2).Select((p) => p).ToArray();
         string[] keys = ht.Where((p, index) => {
-            if (p.Length == 2)
-            {
+            if (p.Length == 2) {
                 Console.WriteLine("--- index:{0}", index);
                 return true;
-            }
-            else
+            } else
                 return false;
         }).ToArray();
 
@@ -369,15 +334,14 @@ class TestContainer
     }
 
 
-    public static void test9()
-    {
+    public static void test9() {
         List<string> ht = new List<string>();
         ht.Add("aa");
         ht.Add("bbb");
         ht.Add("cccc");
         ht.Add("dd");
 
-        List<string> ht2 = ht.Select((item) => { return "new " + item; }).ToList() ;
+        List<string> ht2 = ht.Select((item) => { return "new " + item; }).ToList();
         foreach (var p in ht2)
             Console.WriteLine("--- value:{0}", p);
 
@@ -399,8 +363,7 @@ class TestContainer
     /// <summary>
     /// 两个队列去重
     /// </summary>
-    public static void 去()
-    {
+    public static void test10() {
         List<string> destroyList = new List<string>();
         destroyList.Add("aa");
         destroyList.Add("bbb");
@@ -419,8 +382,7 @@ class TestContainer
         foreach (var v in destroyList)
             ht3.Add(v);
 
-        foreach (var v in notAliveList)
-        {
+        foreach (var v in notAliveList) {
             if (ht3.Contains(v))
                 ht3.Remove(v);
         }
@@ -428,5 +390,29 @@ class TestContainer
         foreach (var v in ht3)
             Console.WriteLine("--- value:{0}", v);
 
+    }
+
+    /// <summary>
+    /// Dictionary 深拷贝
+    /// </summary>
+    public static void test11() {
+        Dictionary<string, int> dictionary = new Dictionary<string, int>();
+        dictionary.Add("cat", 1);
+        dictionary.Add("dog", 3);
+        dictionary.Add("iguana", 5);
+
+        Dictionary<string, int> copy = new Dictionary<string, int>(dictionary);
+
+        dictionary.Add("fish", 4);
+
+        Console.WriteLine("--- Dictionary 1 ---");
+        foreach (var pair in dictionary) {
+            Console.WriteLine(pair);
+        }
+
+        Console.WriteLine("--- Dictionary 2 ---");
+        foreach (var pair in copy) {
+            Console.WriteLine(pair);
+        }
     }
 }

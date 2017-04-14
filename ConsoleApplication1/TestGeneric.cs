@@ -4,12 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-class TestGeneric
-{
+class TestGeneric {
 
 
 
-    public static void test1()
-    {
+    public static void test1() {
     }
 }

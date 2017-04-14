@@ -5,13 +5,11 @@ using System.Text;
 
 using System.Text.RegularExpressions;
 
-class TestString
-{
+class TestString {
     /// <summary>
     /// Regex Split
     /// </summary>
-    public static void test1()
-    {
+    public static void test1() {
         string str = "aaajsbbbjsccc";
         string[] sArray = Regex.Split(str, "js", RegexOptions.IgnoreCase);
         foreach (string i in sArray)
@@ -21,8 +19,7 @@ class TestString
     /// <summary>
     /// string Split
     /// </summary>
-    public static void test2()
-    {
+    public static void test2() {
         string str = "aaajbbbscccjdddseee";
         string[] sArray = str.Split(new char[2] { 'j', 's' });
         foreach (string i in sArray)
@@ -32,10 +29,9 @@ class TestString
     /// <summary>
     /// string Split
     /// </summary>
-    public static void test3()
-    {
+    public static void test3() {
         string str = "aaajbbbjccc";
-        string sp = "j"; 
+        string sp = "j";
         string[] sArray = str.Split(sp.ToArray<char>());
         foreach (string i in sArray)
             Console.WriteLine("{0}", i);
@@ -44,8 +40,7 @@ class TestString
     /// <summary>
     /// string int
     /// </summary>
-    public static void test4() 
-    {
+    public static void test4() {
         int varInt = 1;
         string varString = Convert.ToString(varInt);
         string varString2 = varInt.ToString();
@@ -66,8 +61,7 @@ class TestString
     /// <summary>
     /// string float
     /// </summary>
-    public static void test5()
-    {
+    public static void test5() {
         float varFloat = 11.22f;
         string varString2 = varFloat.ToString();
         Console.WriteLine("--- varString2:{0}", varString2);
@@ -80,8 +74,7 @@ class TestString
     /// <summary>
     /// float int
     /// </summary>
-    public static void test6()
-    {
+    public static void test6() {
         float f1 = 11.22f;
         int i1 = Convert.ToInt32(f1);
         Console.WriteLine("--- result:{0}", i1);
@@ -91,8 +84,7 @@ class TestString
         Console.WriteLine("--- result:{0}", f2);
     }
 
-    public static void test7()
-    {
+    public static void test7() {
         string str = String.Format("[{0}]-avgTime:{1:0.00}ms, avgSize:{2:0.00}kb, cnt:{3}\n"
     , "aaa"
     , 123.456f

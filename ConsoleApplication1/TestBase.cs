@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 //delegate
 
-class TestBase
-{
-    enum EM_aaa : byte
-    {
+class TestBase {
+    enum EM_aaa : byte {
         A = 0,
         B,
         C,
@@ -17,9 +15,8 @@ class TestBase
     }
 
     #region test fold the code
- 
-    void test1()
-    {
+
+    void test1() {
         bool b = 1 < 3 ? true : false;
         Console.WriteLine("hello{0} world{1}", 123, b); //hello123 worldTrue
         Console.WriteLine("{0}", 1 << 2); //4
@@ -38,8 +35,7 @@ class TestBase
     }
     #endregion
 
-    private static void test2()
-    {
+    private static void test2() {
         Console.WriteLine("static void test2()");
     }
 }

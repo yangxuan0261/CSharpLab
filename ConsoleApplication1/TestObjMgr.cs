@@ -4,11 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-class TestObjMgr
-{
-    
+class TestObjMgr {
 
-    public static void test1()
-    {
+
+    public static void test1() {
     }
 }

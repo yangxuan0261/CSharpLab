@@ -4,8 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-class TestAttribute
-{
+class TestAttribute {
     //建议取名：HobbyAttribute
     class Hobby : Attribute // 必须以System.Attribute 类为基类
     {
@@ -39,8 +38,7 @@ class TestAttribute
         }
     }
 
-    public static void test1()
-    {
+    public static void test1() {
         //使用反射读取Attribute
         System.Reflection.MemberInfo info = typeof(Student); //通过反射得到Student类的信息
         Hobby hobbyAttr = (Hobby)Attribute.GetCustomAttribute(info, typeof(Hobby));

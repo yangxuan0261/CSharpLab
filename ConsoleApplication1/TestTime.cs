@@ -37,7 +37,7 @@ class TestTime {
         nodeList.Sort((CNode n1, CNode n2) => {
             return n2.mTime.CompareTo(n1.mTime);
         });
-        
+
         for (int i = 0; i < nodeList.Count; i++) {
             node = nodeList[i];
             Console.WriteLine("name:{0}, time:{1}", node.mName, node.mTime);

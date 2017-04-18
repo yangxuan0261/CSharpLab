@@ -24,7 +24,7 @@ namespace ConsoleApplication1 {
             //TestContainer.test8();
             //TestContainer.test9();
             //TestContainer.test10();
-            TestContainer.test11();
+            //TestContainer.test11();
             //TestDelegate.test10();
 
             //TestObj.test1();
@@ -44,6 +44,8 @@ namespace ConsoleApplication1 {
             //TestGC.test1() ;
             //TestUsing.test1();
             //TestTime.test1();
+
+            TestClsExt.TestClsExt2.test1();
             Console.ReadKey();
         }
     }

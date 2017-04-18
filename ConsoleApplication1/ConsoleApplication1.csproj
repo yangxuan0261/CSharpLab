@@ -55,6 +55,7 @@
     <Compile Include="TestAttribute.cs" />
     <Compile Include="TestGetSet.cs" />
     <Compile Include="TestTime.cs" />
+    <Compile Include="TestClsExt.cs" />
     <Compile Include="TestUsing.cs" />
     <Compile Include="TestString.cs" />
     <Compile Include="TestOOP.cs" />

@@ -26,8 +26,29 @@ class TestOOP {
         }
     }
 
-    public static void test1() {
-        Base obj1 = new BBB();
-        obj1.method1();
+    class Actor {
+        public Actor() {
+            Console.WriteLine("--- Actor ctor");
+        }
     }
+
+    class Dog : Actor {
+        public Dog() {
+            Console.WriteLine("--- Dog ctor111");
+        }
+
+        public Dog(string name) {
+            Console.WriteLine("--- Dog ctor222");
+        }
+    }
+
+    public static void test1() {
+        //Base obj1 = new BBB();
+        //obj1.method1();
+
+        Dog d1 = new Dog();
+        Dog d2 = new Dog("hello");
+    }
+
+
 }

@@ -8,7 +8,7 @@ namespace ConsoleApplication1 {
     class a_main {
         static void Main(string[] args) {
             //TestGeneric.test1();
-            //TestOOP.test1();
+            TestOOP.test1();
 
             //TestLog.test2();
 
@@ -45,7 +45,7 @@ namespace ConsoleApplication1 {
             //TestUsing.test1();
             //TestTime.test1();
 
-            TestClsExt.TestClsExt2.test1();
+            //TestClsExt.TestClsExt2.test1();
             Console.ReadKey();
         }
     }

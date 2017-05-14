@@ -8,7 +8,7 @@ namespace ConsoleApplication1 {
     class a_main {
         static void Main(string[] args) {
             //TestGeneric.test1();
-            TestOOP.test1();
+            //TestOOP.test1();
 
             //TestLog.test2();
 
@@ -28,6 +28,9 @@ namespace ConsoleApplication1 {
             //TestDelegate.test10();
 
             //TestObj.test1();
+            //TestObj.test2();
+            //TestObj.test3();
+            //TestObj.test4();
             //TestBinaryData.test1();
             //TestBinaryData.test2();
 
@@ -43,8 +46,10 @@ namespace ConsoleApplication1 {
 
             //TestGC.test1() ;
             //TestUsing.test1();
+            TestUsing.test2();
             //TestTime.test1();
 
+            //TestCondictional.test1();
             //TestClsExt.TestClsExt2.test1();
             Console.ReadKey();
         }

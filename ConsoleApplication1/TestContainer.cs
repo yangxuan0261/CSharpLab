@@ -415,4 +415,8 @@ class TestContainer {
             Console.WriteLine(pair);
         }
     }
+
+    public static void test12() {
+
+    }
 }

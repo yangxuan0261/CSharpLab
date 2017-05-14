@@ -81,4 +81,23 @@ class TestUsing {
         //}
         //return path;
     }
+
+    class CA {
+        public CA() {
+            Console.WriteLine("CA construct");
+        }
+
+        public void Dispose() {
+            Console.WriteLine("CA.Dispose");
+        }
+    }
+
+    public static void test2() {
+        CA a = new CA();
+        //快速保护方法是使用 as 语句可以转换为安全可回收对象不管是否实现 IDisposable 接口：
+        using (a as IDisposable) { //如果CA没有继承 IDisposable 并实现 Dispose 接口，则这行代码等价 using(null)
+            Console.WriteLine("CA using");
+        }
+        Console.WriteLine("func over");
+    }
 }

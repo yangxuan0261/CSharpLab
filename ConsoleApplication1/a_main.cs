@@ -46,9 +46,10 @@ namespace ConsoleApplication1 {
 
             //TestGC.test1() ;
             //TestUsing.test1();
-            TestUsing.test2();
+            //TestUsing.test2();
             //TestTime.test1();
 
+            TestInterface.test1();
             //TestCondictional.test1();
             //TestClsExt.TestClsExt2.test1();
             Console.ReadKey();

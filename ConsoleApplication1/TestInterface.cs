@@ -57,6 +57,7 @@ class TestInterface {
 
     }
 
+    //没有指定 in 或者 out，就可以即做 参数 又做 返回值
     public class MyList<T> : IMyList<T> {
         public T GetElement() {
             return default(T);

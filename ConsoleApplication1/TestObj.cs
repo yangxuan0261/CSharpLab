@@ -8,15 +8,12 @@ class TestObj {
     class Abs {
         private int i = 1;
         public Dictionary<string, string> _map = new Dictionary<string, string>();
-
-        public string this[string key]{
-            get
-            {
-                return _map.ContainsKey(key) ? _map[key] : null ;
+        public string this[string key] {
+            get {
+                return _map.ContainsKey(key) ? _map[key] : null;
             }
 
-            set
-            {
+            set {
                 _map.Add(key, value);
             }
         }
@@ -97,4 +94,15 @@ class TestObj {
         //CD static construct
         //CD construct
     }
+
+    public class MyClass {// collection of data
+        private List<Circle> coll;
+        private string name;
+        public MyClass() :this(0, string.Empty) { }
+        public MyClass(int initialCount = 0, string name = "") {
+            coll = (initialCount > 0) ?  new List<Circle>(initialCount) : new List<Circle>();
+            this.name = name;
+        }
+    }
+
 }

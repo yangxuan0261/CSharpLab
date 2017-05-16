@@ -21,8 +21,8 @@ class TestCondictional
 #endif
     }
 
-    // 使用 conditional attribute 替代 #if/#endif，可以减少不必要的函数调用及代码
-    [Conditional("DEBUG_TEST2")]
+        // 使用 conditional attribute 替代 #if/#endif，可以减少不必要的函数调用及代码
+        [Conditional("DEBUG_TEST2")]
     public static void func2() {
         for (int i = 0; i < 10; i++) {
             Console.WriteLine("--- func2 - {0}", i);

@@ -5,6 +5,12 @@ using System.Text;
 using System.Threading.Tasks;
 
 class TestAttribute {
+
+    //CatAttribute 这样命名使用时是 Cat
+    class CatAttribute : Attribute {
+
+    }
+
     //建议取名：HobbyAttribute
     class Hobby : Attribute // 必须以System.Attribute 类为基类
     {
@@ -30,7 +36,7 @@ class TestAttribute {
     //注意："Sports" 是给构造函数的赋值， Level = 5 是给属性的赋值。
     [Hobby("Sports", Level = 5)]
     class Student {
-        [Hobby("Football")]
+        [Hobby("Football"), Cat]
         public string profession;
         public string Profession {
             get { return profession; }

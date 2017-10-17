@@ -55,10 +55,11 @@ namespace ConsoleApplication1 {
             //TestClsExt.TestClsExt2.test1();
 
             //TestReflection.test2();
-            TestReflection.test3();
+            //TestReflection.test3();
             //TestReflection.test4();
 
             //TestDirectory.test1();
+            TestWord.test1();
             Console.ReadKey();
         }
     }

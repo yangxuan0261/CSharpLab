@@ -42,6 +42,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="a_main.cs" />
+    <Compile Include="SensitiveWord\TestWord.cs" />
+    <Compile Include="SensitiveWord\WordsSearchEx.cs" />
+    <Compile Include="SensitiveWord\WordsSearchResult.cs" />
     <Compile Include="TestDirectory.cs" />
     <Compile Include="TestReflection.cs" />
     <Compile Include="TestBase.cs" />

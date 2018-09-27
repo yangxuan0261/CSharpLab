@@ -24,8 +24,8 @@ namespace ConsoleApplication1 {
             //TestContainer.test8();
             //TestContainer.test9();
             //TestContainer.test10();
-            //TestContainer.test11();
-            //TestDelegate.test10();
+            TestContainer.test11();
+            // TestDelegate.test10();
 
             //TestObj.test1();
             //TestObj.test2();
@@ -56,10 +56,10 @@ namespace ConsoleApplication1 {
 
             //TestReflection.test2();
             //TestReflection.test3();
-            //TestReflection.test4();
+            // TestReflection.test4();
 
             //TestDirectory.test1();
-            TestWord.test1();
+            // TestWord.test1();
             
             Console.ReadKey();
         }

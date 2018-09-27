@@ -60,6 +60,7 @@ namespace ConsoleApplication1 {
 
             //TestDirectory.test1();
             TestWord.test1();
+            
             Console.ReadKey();
         }
     }

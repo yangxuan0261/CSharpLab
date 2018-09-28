@@ -11,11 +11,20 @@
                 "build",
                 "${workspaceFolder}/CSharpLab/CSharpLab.csproj"
             ],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "run",
+            "command": "start",
+            "type": "shell",
+            "args": [
+                "${workspaceFolder}/CSharpLab/bin/Debug/CSharpLab.exe"
+            ],
+            "dependsOn": ["build"],
             "group": {
                 "kind": "build",
                 "isDefault": true
             },
-            "problemMatcher": "$msCompile"
         }
     ]
 }

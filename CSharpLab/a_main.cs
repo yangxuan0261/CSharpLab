@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApplication1 {
+namespace CSharpLab {
     class a_main {
         static void Main(string[] args) {
             //TestGeneric.test1();
@@ -24,7 +24,7 @@ namespace ConsoleApplication1 {
             //TestContainer.test8();
             //TestContainer.test9();
             //TestContainer.test10();
-            TestContainer.test11();
+            // TestContainer.test11();
             // TestDelegate.test10();
 
             //TestObj.test1();
@@ -60,7 +60,8 @@ namespace ConsoleApplication1 {
 
             //TestDirectory.test1();
             // TestWord.test1();
-            
+            AlgorithmTest.test1();
+
             Console.ReadKey();
         }
     }

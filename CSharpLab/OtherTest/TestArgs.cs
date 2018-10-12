@@ -16,4 +16,21 @@ class TestArgs {
         method1(a, ref b);
         Console.WriteLine("-- test1, a:{0}, b:{1}", a, b); //1, 12
     }
+
+    public static void method2(params string[] args) {
+        if (args == null) {
+            Console.WriteLine("--- args is null");
+            return;
+        }
+
+        Console.WriteLine("--- args len:{0}", args.Length);
+        foreach (var item in args) {
+            Console.WriteLine("--- item:{0}", item);
+        }
+    }
+
+    public static void test2() {
+        method2("aaa", "bbb");
+        method2();
+    }
 }

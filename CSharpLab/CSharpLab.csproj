@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AlgorithmTest\AlgorithmTest.cs" />
+    <Compile Include="AlgorithmTest\DynamicPlan.cs" />
     <Compile Include="a_main.cs" />
     <Compile Include="SensitiveWord\TestWord.cs" />
     <Compile Include="SensitiveWord\WordsSearchEx.cs" />

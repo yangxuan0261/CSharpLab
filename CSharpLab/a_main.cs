@@ -13,7 +13,8 @@ namespace CSharpLab {
             //TestLog.test2();
 
             //TestLambda.test1();
-            //TestArgs.test1();
+            // TestArgs.test1();
+            TestArgs.test2();
             //TestContainer.test1();
             //TestContainer.test2();
             //TestContainer.test3();
@@ -60,7 +61,9 @@ namespace CSharpLab {
 
             //TestDirectory.test1();
             // TestWord.test1();
-            AlgorithmTest.test1();
+            // AlgorithmTest.test1();
+
+            // DynamicPlan.test1();
 
             Console.ReadKey();
         }

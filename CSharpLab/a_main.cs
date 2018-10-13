@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 namespace CSharpLab {
     class a_main {
         static void Main(string[] args) {
+            // TestBase.test2();
             //TestGeneric.test1();
             //TestOOP.test1();
 
@@ -14,7 +15,7 @@ namespace CSharpLab {
 
             //TestLambda.test1();
             // TestArgs.test1();
-            TestArgs.test2();
+            // TestArgs.test2();
             //TestContainer.test1();
             //TestContainer.test2();
             //TestContainer.test3();
@@ -26,7 +27,7 @@ namespace CSharpLab {
             //TestContainer.test9();
             //TestContainer.test10();
             // TestContainer.test11();
-            // TestDelegate.test10();
+            TestDelegate.main();
 
             //TestObj.test1();
             //TestObj.test2();
@@ -64,7 +65,6 @@ namespace CSharpLab {
             // AlgorithmTest.test1();
 
             // DynamicPlan.test1();
-
             Console.ReadKey();
         }
     }

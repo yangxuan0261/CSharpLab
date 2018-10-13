@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 //delegate
 
-class TestBase {
+public class TestBase {
     enum EM_aaa : byte {
         A = 0,
         B,
@@ -35,7 +35,10 @@ class TestBase {
     }
     #endregion
 
-    private static void test2() {
-        Console.WriteLine("static void test2()");
+    public static void test2() {
+        uint aaa = 123;
+        string bbb = aaa.ToString();
+        
+        Console.WriteLine("--- uint to string:{0}", bbb);
     }
 }

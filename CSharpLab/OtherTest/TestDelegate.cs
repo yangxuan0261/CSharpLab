@@ -10,11 +10,8 @@ class TestDelegate {
         Console.WriteLine("--- method1, str:{0}", _str);
     }
 
-    /// <summary>
-    /// test delegate
-    /// </summary>
     public static void test1() {
-        dlg1 d1 = TestDelegate.method1;
+        dlg1 d1 = TestDelegate.method1; // 静态 委托
         d1("hello world");
 
         //dlg has return
@@ -32,12 +29,19 @@ class TestDelegate {
         a1(456);
     }
 
-    public static event dlg1 dlgHandler;
-    /// <summary>
-    /// test event
-    /// just like Observer pattern
-    /// </summary>
-    public static void test2() {
+
+    private void method2(string _str) {
+        Console.WriteLine("--- method2, str:{0}", _str);
+    }
+
+    static void test2() {
+        TestDelegate td = new TestDelegate();
+        dlg1 ptrDlg = new dlg1(td.method2); // 实例 委托
+        ptrDlg("wolegequ");
+    }
+
+    public static event dlg1 dlgHandler; // 事件 委托
+    public static void test3() {
         dlg1 d1 = (string _str) => { Console.WriteLine("--- d1, str:{0}", _str); };
         dlg1 d2 = (string _str) => { Console.WriteLine("--- d2, str:{0}", _str); };
         dlg1 d3 = (string _str) => { Console.WriteLine("--- d3, str:{0}", _str); };
@@ -50,5 +54,35 @@ class TestDelegate {
         dlgHandler -= d1;
         dlgHandler("world");
 
+    }
+
+    static void test4() {
+        if (dlgHandler == null) {
+            Console.WriteLine("--- dlgHandler == null 111"); // 没有添加 委托时, dlgHandler == null
+        }
+
+        dlg1 d1 = (string _str) => { Console.WriteLine("--- d1, str:{0}", _str); };
+        dlgHandler += d1;
+        dlgHandler("hello");
+
+        if (dlgHandler == null) {
+            Console.WriteLine("--- dlgHandler == null 222"); 
+        } else {
+            Console.WriteLine("--- dlgHandler != null 222"); // 只要有添加 委托, dlgHandler != null 222
+        }
+
+        dlgHandler -= d1;
+        if (dlgHandler == null) {
+            Console.WriteLine("--- dlgHandler == null 333"); // 清空了 委托, dlgHandler == null 333
+        } else {
+            Console.WriteLine("--- dlgHandler != null 333");
+        }
+    }
+
+    public static void main() {
+        // test1();
+        // test2();
+        // test3();
+        test4();
     }
 }

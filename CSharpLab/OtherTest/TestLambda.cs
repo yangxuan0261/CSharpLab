@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -6,12 +6,12 @@ class TestLambda {
     public delegate string dlg1(int _a);
 
     public class People {
-        public int age { get; set; }                //设置属性  
-        public string name { get; set; }            //设置属性  
-        public People(int age, string name)      //设置属性(构造函数构造)  
+        public int age { get; set; } //设置属性  
+        public string name { get; set; } //设置属性  
+        public People(int age, string name) //设置属性(构造函数构造)  
         {
-            this.age = age;                 //初始化属性值age  
-            this.name = name;               //初始化属性值name  
+            this.age = age; //初始化属性值age  
+            this.name = name; //初始化属性值name  
         }
     }
 
@@ -40,10 +40,17 @@ class TestLambda {
 
     public static void test2() {
         string str1 = "hello ";
-        dlg1 d = delegate (int _num) {
+        dlg1 d = delegate(int _num) {
             Console.WriteLine("--- num:{0}", _num);
             return str1 + "world";
         };
         Console.WriteLine("--- ret:{0}", d(123));
+    }
+
+    public static void test3() {
+        Func<bool, int> myFunc = (x) => {
+            return x ? 10 : 5;
+        };
+        Console.WriteLine("--- res:{0}", myFunc(true));
     }
 }

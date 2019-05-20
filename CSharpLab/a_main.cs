@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,6 +14,7 @@ namespace CSharpLab {
             //TestLog.test2();
 
             //TestLambda.test1();
+            TestLambda.test3();
             // TestArgs.test1();
             // TestArgs.test2();
             //TestContainer.test1();
@@ -27,7 +28,7 @@ namespace CSharpLab {
             //TestContainer.test9();
             //TestContainer.test10();
             // TestContainer.test11();
-            TestDelegate.main();
+            // TestDelegate.main();
 
             //TestObj.test1();
             //TestObj.test2();

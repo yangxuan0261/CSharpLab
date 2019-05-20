@@ -6,10 +6,10 @@
     "configurations": [
          {
              "name": ".NET Core Launch (console)",
-             "type": "coreclr",
              "request": "launch",
              "preLaunchTask": "build",
              // If you have changed target frameworks, make sure to update the program path.
+             "type" : "clr",
              "program": "${workspaceFolder}/CSharpLab/bin/Debug/CSharpLab.exe",
              "args": [],
              "cwd": "${workspaceFolder}",

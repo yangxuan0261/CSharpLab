@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -444,5 +445,30 @@ class TestContainer {
 --- key=3,value=ccc
 --- key=4,value=aaa
          */
+    }
+
+    public static void testStack() {
+        /*
+        Count	获取 Stack 中包含的元素个数。
+
+        1	public virtual void Clear(); 
+        从 Stack 中移除所有的元素。
+        2	public virtual bool Contains( object obj ); 
+        判断某个元素是否在 Stack 中。
+        3	public virtual object Peek();
+        返回在 Stack 的顶部的对象，但不移除它。
+        4	public virtual object Pop();
+        移除并返回在 Stack 的顶部的对象。
+        5	public virtual void Push( object obj );
+        向 Stack 的顶部添加一个对象。
+        6	public virtual object[] ToArray();
+        复制 Stack 到一个新的数组中。
+         */
+        Stack<int> stk = new Stack<int>();
+        stk.Push(11);
+        stk.Push(22);
+        stk.Push(33);
+        stk.Push(44);
+        stk.Push(55);
     }
 }

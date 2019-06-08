@@ -28,7 +28,7 @@ namespace CSharpLab {
             // TestContainer.test9();
             // TestContainer.testQuchong();
             // TestContainer.testDepthCopy();
-            TestContainer.testSortDict01();
+            // TestContainer.testSortDict01();
 
             // TestDelegate.main();
 
@@ -68,6 +68,9 @@ namespace CSharpLab {
             // AlgorithmTest.test1();
 
             // DynamicPlan.test1();
+
+            // TestStaticClass.test2();
+            TestClass.test2();
 
             Console.ReadKey();
         }

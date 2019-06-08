@@ -87,6 +87,8 @@
     <Compile Include="OtherTest\TestArgs.cs" />
     <Compile Include="OtherTest\TestLog.cs" />
     <Compile Include="OtherTest\TestGeneric.cs" />
+    <Compile Include="OtherTest\TestStaticClass.cs" />
+    <Compile Include="OtherTest\TestClass.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

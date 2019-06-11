@@ -29,7 +29,8 @@ namespace CSharpLab {
             // TestContainer.testQuchong();
             // TestContainer.testDepthCopy();
             // TestContainer.testSortDict01();
-            TestContainer.testStack();
+            // TestContainer.testStack();
+            TestContainer.testSortedList();
 
             // TestDelegate.main();
 

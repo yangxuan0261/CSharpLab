@@ -471,4 +471,24 @@ class TestContainer {
         stk.Push(44);
         stk.Push(55);
     }
+
+    public static void testSortedList() {
+        SortedList<int, string> sl = new SortedList<int, string>();
+        sl.Add(4, "aaa");
+        sl.Add(2, "bbb");
+        sl.Add(3, "ccc");
+        sl.Add(1, "ddd");
+
+        foreach (var item in sl) {
+            Console.WriteLine("key:{0}, value:{1}", item.Key, item.Value);
+        }
+        /*
+key:1, value:ddd
+key:2, value:bbb
+key:3, value:ccc
+key:4, value:aaa
+         */
+        // 输出的结果是有序的, 每一次 add 都会
+    }
+
 }

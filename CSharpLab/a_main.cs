@@ -17,6 +17,7 @@ namespace CSharpLab {
             // TestLambda.test3();
             // TestArgs.test1();
             // TestArgs.test2();
+            TestAsync.test1();
             // TestContainer.test1();
             // TestContainer.test2();
             // TestContainer.testListDort00();
@@ -30,7 +31,7 @@ namespace CSharpLab {
             // TestContainer.testDepthCopy();
             // TestContainer.testSortDict01();
             // TestContainer.testStack();
-            TestContainer.testSortedList();
+            // TestContainer.testSortedList();
 
             // TestDelegate.main();
 

@@ -41,4 +41,13 @@ public class TestBase {
         
         Console.WriteLine("--- uint to string:{0}", bbb);
     }
+
+    public static void test_bit() {
+        int total = 11; // 1011
+        int mail = 2;
+        int mailDst = 1 << (mail - 1);
+        int finalDst = mailDst & total;
+        Console.WriteLine("--- mailDst:{0}", mailDst);
+        Console.WriteLine("--- finalDst:{0}", finalDst);
+    }
 }

@@ -447,6 +447,22 @@ class TestContainer {
          */
     }
 
+    public static void testDict02() {
+        Dictionary<string, string> dict01 = new Dictionary<string, string>();
+        dict01.Add("111", "aaa");
+        dict01.Add("222", "bbb");
+        foreach (var pair in dict01) {
+            Console.WriteLine(pair);
+        }
+
+        try {
+            string val = dict01["333"];
+            Console.WriteLine("--- val:{0}", val);
+        } catch (System.Exception e) {
+            Console.WriteLine("--- err:{0}", e.Message); // --- err:给定关键字不在字典中, 也就是: The given key was not present in the dictionary 
+        }
+    }
+
     public static void testStack() {
         /*
         Count	获取 Stack 中包含的元素个数。

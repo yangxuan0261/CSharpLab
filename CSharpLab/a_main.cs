@@ -8,7 +8,7 @@ namespace CSharpLab {
     class a_main {
         static void Main(string[] args) {
             // TestBase.test2();
-            TestBase.test_bit();
+            // TestBase.test_bit();
             // TestGeneric.test1();
             // TestOOP.test1();
 
@@ -31,6 +31,7 @@ namespace CSharpLab {
             // TestContainer.testQuchong();
             // TestContainer.testDepthCopy();
             // TestContainer.testSortDict01();
+            TestContainer.testDict02();
             // TestContainer.testStack();
             // TestContainer.testSortedList();
 

@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
 using System.Text.RegularExpressions;
 
 class TestString {
@@ -85,12 +84,35 @@ class TestString {
     }
 
     public static void test7() {
-        string str = String.Format("[{0}]-avgTime:{1:0.00}ms, avgSize:{2:0.00}kb, cnt:{3}\n"
-    , "aaa"
-    , 123.456f
-    , 987.654f
-    , 666);
+        string str = String.Format("[{0}]-avgTime:{1:0.00}ms, avgSize:{2:0.00}kb, cnt:{3}\n", "aaa", 123.456f, 987.654f, 666);
         Console.WriteLine(str);
     }
 
+    public enum ERes : int {
+        Zeus = 1,
+        Poseidon = 2,
+    }
+
+    public static void test_enum2string() {
+        // Enum -> String
+        string s1 = Enum.GetName(typeof(ERes), 2);
+        string s2 = Enum.GetName(typeof(ERes), ERes.Poseidon);
+        Console.WriteLine(string.Format("--- s1: {0}", s1));
+        Console.WriteLine(string.Format("--- s2: {0}", s2));
+        /*
+        --- s1: Poseidon
+        --- s2: Poseidon
+        */
+
+        // String -> Enum
+        ERes e1 =(ERes)Enum.Parse(typeof(ERes), "Poseidon");
+        Console.WriteLine(string.Format("--- e1: {0}", e1));
+        // --- e1: Poseidon
+
+        // Int -> Enum
+        bool b1 = Enum.IsDefined(typeof(ERes), 2);
+        Console.WriteLine(string.Format("--- b1: {0}", b1));
+        ERes e2 =(ERes)2;
+        Console.WriteLine(string.Format("--- e2: {0}", e2));
+    }
 }

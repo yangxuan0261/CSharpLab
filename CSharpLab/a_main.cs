@@ -31,7 +31,7 @@ namespace CSharpLab {
             // TestContainer.testQuchong();
             // TestContainer.testDepthCopy();
             // TestContainer.testSortDict01();
-            TestContainer.testDict02();
+            // TestContainer.testDict02();
             // TestContainer.testStack();
             // TestContainer.testSortedList();
 
@@ -54,6 +54,8 @@ namespace CSharpLab {
             // TestString.test4();
             // TestString.test5();
             // TestString.test6(); 
+            // TestString.test7(); 
+            TestString.test_enum2string(); 
 
             // TestGC.test1() ;
             // TestUsing.test1();

@@ -55,7 +55,8 @@ namespace CSharpLab {
             // TestString.test5();
             // TestString.test6(); 
             // TestString.test7(); 
-            TestString.test_enum2string(); 
+            TestString.test_split(); 
+            // TestString.test_enum2string(); 
 
             // TestGC.test1() ;
             // TestUsing.test1();

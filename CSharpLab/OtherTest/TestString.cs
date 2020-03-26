@@ -88,6 +88,15 @@ class TestString {
         Console.WriteLine(str);
     }
 
+    public static void test_split() {
+        string name = "aaa-bbb";
+        string[] arr = name.Split('#'); // 如果找不到, 那么这个 arr 将会是 一个长度的数组, 元素就是字符串本身, aaa-bbb
+        Console.WriteLine("--- arr not null, len:{0}", arr.Length);
+        foreach (var item in arr) {
+            Console.WriteLine("--- item: {0}", item);
+        }
+    }
+
     public enum ERes : int {
         Zeus = 1,
         Poseidon = 2,
@@ -105,14 +114,14 @@ class TestString {
         */
 
         // String -> Enum
-        ERes e1 =(ERes)Enum.Parse(typeof(ERes), "Poseidon");
+        ERes e1 = (ERes) Enum.Parse(typeof(ERes), "Poseidon");
         Console.WriteLine(string.Format("--- e1: {0}", e1));
         // --- e1: Poseidon
 
         // Int -> Enum
         bool b1 = Enum.IsDefined(typeof(ERes), 2);
         Console.WriteLine(string.Format("--- b1: {0}", b1));
-        ERes e2 =(ERes)2;
+        ERes e2 = (ERes) 2;
         Console.WriteLine(string.Format("--- e2: {0}", e2));
     }
 }

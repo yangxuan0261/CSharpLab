@@ -55,7 +55,7 @@ namespace CSharpLab {
             // TestString.test5();
             // TestString.test6(); 
             // TestString.test7(); 
-            TestString.test_split(); 
+            // TestString.test_split(); 
             // TestString.test_enum2string(); 
 
             // TestGC.test1() ;
@@ -71,7 +71,7 @@ namespace CSharpLab {
             // TestReflection.test3();
             // TestReflection.test4();
 
-            // TestDirectory.test1();
+            TestDirectory.test1();
             // TestWord.test1();
             // AlgorithmTest.test1();
 
@@ -80,6 +80,8 @@ namespace CSharpLab {
             // TestStaticClass.test2();
             // TestClass.test2();
 
+
+            // TestByte.test1();
             Console.ReadKey();
         }
     }

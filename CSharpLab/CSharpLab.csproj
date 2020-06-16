@@ -76,6 +76,7 @@
     <Compile Include="OtherTest\TestObj.cs" />
     <Compile Include="OtherTest\TestObjMgr.cs" />
     <Compile Include="OtherTest\TestBinaryData.cs" />
+    <Compile Include="OtherTest\TestByte.cs" />
     <Compile Include="OtherTest\TestAttribute.cs" />
     <Compile Include="OtherTest\TestGetSet.cs" />
     <Compile Include="OtherTest\TestTime.cs" />

@@ -91,6 +91,7 @@
     <Compile Include="OtherTest\TestGeneric.cs" />
     <Compile Include="OtherTest\TestStaticClass.cs" />
     <Compile Include="OtherTest\TestClass.cs" />
+    <Compile Include="OtherTest\TestRegex.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

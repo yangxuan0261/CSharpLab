@@ -507,4 +507,22 @@ key:4, value:aaa
         // 输出的结果是有序的, 每一次 add 都会
     }
 
+    public static void main() {
+        // test1();
+        test2();
+        // testListDort00();
+        // testDictDeleteByVaule();
+        // testListDelete();
+        // testListSort();
+        // testDictDelete();
+        // test8();
+        // test9();
+        // testQuchong();
+        // testDepthCopy();
+        // testSortDict01();
+        // testDict02();
+        // testStack();
+        // testSortedList();
+    }
+
 }

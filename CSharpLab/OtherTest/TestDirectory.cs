@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
-using System.IO;
 using System.Threading.Tasks;
 
 class TestDirectory {
@@ -77,13 +77,19 @@ class TestDirectory {
         fs.Close();
     }
 
-    public static void test1() {
+    public static void main() {
 
         // string selDir = "D:\\z_mywiki\\a_csdn_blog";
         // RecurDir(selDir);
         // Console.WriteLine("--- modify files:{0}", counter);
 
-        string path = "E:/its_rummy/Assets/../z_package\\debug\\rmg_rummy_station_8-3-2_v0.16.6.5_1_20200605_115936.apk";
-        Console.WriteLine("filename: " + Path.GetFileName(path));
+        // string path = "E:/its_rummy/Assets/../z_package\\debug\\rmg_rummy_station_8-3-2_v0.16.6.5_1_20200605_115936.apk";
+        // Console.WriteLine("filename: " + Path.GetFileName(path));
+
+        string[] files = Directory.GetFiles("E:/its_rummy/Document/pack_config", "a_packarg_outer_*.json", SearchOption.TopDirectoryOnly);
+        Console.WriteLine("--- len: " + files.Length);
+        foreach (string item in files) {
+            Console.WriteLine("--- item: " + item);
+        }
     }
 }

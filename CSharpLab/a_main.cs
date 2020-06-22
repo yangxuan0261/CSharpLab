@@ -7,8 +7,7 @@ using System.Threading.Tasks;
 namespace CSharpLab {
     class a_main {
         static void Main(string[] args) {
-            // TestBase.test2();
-            // TestBase.test_bit();
+            TestBase.main();
             // TestGeneric.test1();
             // TestOOP.test1();
 
@@ -19,21 +18,7 @@ namespace CSharpLab {
             // TestArgs.test1();
             // TestArgs.test2();
             // TestAsync.test1();
-            // TestContainer.test1();
-            // TestContainer.test2();
-            // TestContainer.testListDort00();
-            // TestContainer.testDictDeleteByVaule();
-            // TestContainer.testListDelete();
-            // TestContainer.testListSort();
-            // TestContainer.testDictDelete();
-            // TestContainer.test8();
-            // TestContainer.test9();
-            // TestContainer.testQuchong();
-            // TestContainer.testDepthCopy();
-            // TestContainer.testSortDict01();
-            // TestContainer.testDict02();
-            // TestContainer.testStack();
-            // TestContainer.testSortedList();
+            // TestContainer.main();
 
             // TestDelegate.main();
 
@@ -71,7 +56,7 @@ namespace CSharpLab {
             // TestReflection.test3();
             // TestReflection.test4();
 
-            TestDirectory.test1();
+            // TestDirectory.main();
             // TestWord.test1();
             // AlgorithmTest.test1();
 
@@ -80,8 +65,8 @@ namespace CSharpLab {
             // TestStaticClass.test2();
             // TestClass.test2();
 
-
             // TestByte.test1();
+            // TestRegex.test();
             Console.ReadKey();
         }
     }

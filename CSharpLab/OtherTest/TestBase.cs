@@ -16,11 +16,11 @@ public class TestBase {
 
     #region test fold the code
 
-    void test1() {
+    static void test1() {
         bool b = 1 < 3 ? true : false;
         Console.WriteLine("hello{0} world{1}", 123, b); //hello123 worldTrue
         Console.WriteLine("{0}", 1 << 2); //4
-        Console.WriteLine("{0}", (int)TestBase.EM_aaa.D);//3 
+        Console.WriteLine("{0}", (int) TestBase.EM_aaa.D); //3 
 
         int[] iArr = new int[5] { 1, 2, 3, 4, 5 };
         //for (int i = 0; i < iArr.Length; ++i)
@@ -35,14 +35,14 @@ public class TestBase {
     }
     #endregion
 
-    public static void test2() {
+    static void test2() {
         uint aaa = 123;
         string bbb = aaa.ToString();
-        
+
         Console.WriteLine("--- uint to string:{0}", bbb);
     }
 
-    public static void test_bit() {
+    static void test_bit() {
         int total = 11; // 1011
         int mail = 2;
         int mailDst = 1 << (mail - 1);
@@ -50,4 +50,41 @@ public class TestBase {
         Console.WriteLine("--- mailDst:{0}", mailDst);
         Console.WriteLine("--- finalDst:{0}", finalDst);
     }
+
+    public enum EAct : int {
+        Walk = 1,
+        Run = 2,
+        Swim = 3,
+    }
+
+    static void test_enum() {
+        // enum -> string, enum -> int
+        EAct at1 = EAct.Run;
+        Console.WriteLine(string.Format("--- at1: {0}, val: {1}", at1.ToString(), (int) at1));
+
+        Enum at2 = at1;
+        Console.WriteLine(string.Format("--- at2: {0}, val: {1}", at2.ToString(), Convert.ToInt32(at2))); // Enum 只能用 Convert 强转
+
+        // string -> enum, 转不出来会报异常
+        string name = "Swim";
+        try {
+            EAct at3 = (EAct) Enum.Parse(typeof(EAct), name);
+            Console.WriteLine(string.Format("--- at3: {0}, val: {1}", at3.ToString(), (int) at3));
+        } catch (System.Exception e) {
+            Console.WriteLine(e);
+        }
+
+        // int -> enum
+        int num = 1;
+        EAct at4 = (EAct) num;
+        Console.WriteLine(string.Format("--- at4: {0}, val: {1}", at4.ToString(), (int) at4));
+    }
+
+    public static void main() {
+        // test1();
+        // test2();
+        // test_bit();
+        test_enum();
+    }
+
 }

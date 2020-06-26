@@ -57,6 +57,12 @@ public class TestBase {
         Swim = 3,
     }
 
+    public static class EnumUtil {
+        public static IEnumerable<T> GetValues<T>() {
+            return Enum.GetValues(typeof(T)).Cast<T>();
+        }
+    }
+
     static void test_enum() {
         // enum -> string, enum -> int
         EAct at1 = EAct.Run;
@@ -78,6 +84,22 @@ public class TestBase {
         int num = 1;
         EAct at4 = (EAct) num;
         Console.WriteLine(string.Format("--- at4: {0}, val: {1}", at4.ToString(), (int) at4));
+
+        //  EnumUtil.GetValues<EAct>();
+
+        foreach (EAct item in Enum.GetValues(typeof(EAct))) {
+            Console.WriteLine(string.Format("--- val: {0}", (int) item));
+        }
+
+        foreach (string value in Enum.GetNames(typeof(EAct))) {
+            Console.WriteLine(string.Format("--- name: {0}", value));
+        }
+
+        // enum to array or list
+        List<int> intLst = Enum.GetValues(typeof(EAct)).Cast<int>().ToList();
+        foreach (int value in intLst) {
+            Console.WriteLine(string.Format("--- intLst: {0}", value));
+        }
     }
 
     public static void main() {

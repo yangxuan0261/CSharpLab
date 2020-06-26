@@ -337,6 +337,14 @@ class TestContainer {
             Console.WriteLine("--- value:{0}", p);
     }
 
+    public static void testListConvertAll() {
+        List<int> l1 = new List<int>(new int[] { 1, 2, 3 });
+        List<string> l2 = l1.ConvertAll<string>(delegate(int i) { return "hello-" + i.ToString(); });
+        foreach (var item in l2) {
+            Console.WriteLine("--- item: " + item);
+        }
+    }
+
     public static void test9() {
         List<string> ht = new List<string>();
         ht.Add("aa");
@@ -448,6 +456,10 @@ class TestContainer {
     }
 
     public static void testDict02() {
+        // 直接初始化内容
+        Dictionary<string, string> dict00 = new Dictionary<string, string>() { { "111", "aaa" }, { "222", "bbb" }
+        };
+
         Dictionary<string, string> dict01 = new Dictionary<string, string>();
         dict01.Add("111", "aaa");
         dict01.Add("222", "bbb");
@@ -509,7 +521,7 @@ key:4, value:aaa
 
     public static void main() {
         // test1();
-        test2();
+        // test2();
         // testListDort00();
         // testDictDeleteByVaule();
         // testListDelete();
@@ -523,6 +535,7 @@ key:4, value:aaa
         // testDict02();
         // testStack();
         // testSortedList();
+        testListConvertAll();
     }
 
 }

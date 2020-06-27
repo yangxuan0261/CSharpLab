@@ -20,14 +20,20 @@ using System.Text.RegularExpressions;
 public class TestRegex {
 
     private static void test_catch() {
-        string txt1 = "紫色版-7";
-        Match mth = new Regex(@"-(\d+)$").Match(txt1);
-        Console.WriteLine("--- is match ok: " + mth.Success);
-        if (mth.Success) {
-
-            Console.WriteLine("coutn: {0}", mth.Groups.Count); //输出：thing  
-            Console.WriteLine("platId: {0}", mth.Groups[1].Value); //输出：thing  
-            Console.WriteLine("platId: {0}", mth.Groups[2].Value); //输出：thing  
+        string txt1 = "紫色版-7-123";
+        Match mth1 = new Regex(@"-(\d+)-(\d+)").Match(txt1);
+        Console.WriteLine("--- is match ok: {0}, cnt: {1}", mth1.Success, mth1.Groups.Count); // is match ok: True, cnt: 3
+        if (mth1.Success) {
+            Console.WriteLine("platId0: {0}", mth1.Groups[0].Value); // -7-123
+            Console.WriteLine("platId1: {0}", mth1.Groups[1].Value); // 7
+            Console.WriteLine("platId2: {0}", mth1.Groups[2].Value); // 123
+        }
+        Match mth2 = new Regex(@"-(?:\d+)-(\d+)").Match(txt1); // ?: 表示只是匹配, 但不捕获
+        Console.WriteLine("--- is match ok: {0}, cnt: {1}", mth2.Success, mth2.Groups.Count); // is match ok: True, cnt: 2
+        if (mth2.Success) {
+            Console.WriteLine("platId0: {0}", mth2.Groups[0].Value); // -7-123
+            Console.WriteLine("platId1: {0}", mth2.Groups[1].Value); // 123
+            Console.WriteLine("platId2: {0}", mth2.Groups[2].Value); // ""
         }
 
         string txt2 = "23794大富科世纪东方了djfkasdl@qq.com9548dhf28340385@163.comsdfjsd  2349@sina.com305983*&*&*2";
@@ -38,12 +44,27 @@ public class TestRegex {
 
         string txt3 = "nihao123@qq.com   myemail@163.comasjdfjsdf";
         MatchCollection mths2 = new Regex(@"([a-zA-Z0-9_]+)@([a-zA-Z0-9]+)\.com").Matches(txt3);;
+        Console.WriteLine("--- cnt: {0}", mths2.Count);
         for (int i = 0; i < mths2.Count; i++) {
             Console.WriteLine("匹配到的第 {0} 个邮箱结果是 {1}，对应用户名是 {2}, 邮箱域名: {3}", i + 1, mths2[i], mths2[i].Groups[1].Value, mths2[i].Groups[2].Value);
         }
     }
 
+    private static void test_replace() {
+        string txt1 = "紫色版-7-123";
+        string res1 = new Regex(@"-(\d+)").Replace(txt1, "wolegequ", 1); // 1 表示只替换一次, -1 表示所有
+        Console.WriteLine("--- res1: {0}", res1); // res1: 紫色版wolegequ-123
+
+        string res2 = new Regex(@"-(\d+)").Replace(txt1, (mth) => {
+            Console.WriteLine("--- mth: {0}", mth.ToString()); // mth: -7, mth: -123
+            return "hello";
+        });
+        Console.WriteLine("--- res2: {0}", res2); // res2: 紫色版hellohello
+
+    }
+
     public static void main() {
-        test_catch();
+        // test_catch();
+        test_replace();
     }
 }

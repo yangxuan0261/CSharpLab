@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-class TestDirectory {
+class TestIO {
 
     static int counter = 0;
 
@@ -77,8 +77,25 @@ class TestDirectory {
         fs.Close();
     }
 
-    public static void main() {
+    public static void test_GetFiles() {
+        string[] files = Directory.GetFiles("E:/its_rummy/Document/pack_config", "a_packarg_outer_*.json", SearchOption.TopDirectoryOnly);
+        Console.WriteLine("--- len: " + files.Length);
+        foreach (string item in files) {
+            Console.WriteLine("--- item: " + item);
+        }
+    }
 
+    public static void test_copyFile() {
+        string path1 = "C:/Users/wolegequ/Desktop/a_temp.lua";
+        string path2 = "C:/Users/wolegequ/Desktop/a_temp222.lua";
+        File.Copy(path1, path2, true);
+
+        File.Move(path2, path2 + ".bytes");
+    }
+
+    public static void main() {
+        // test_GetFiles();
+        test_copyFile();
         // string selDir = "D:\\z_mywiki\\a_csdn_blog";
         // RecurDir(selDir);
         // Console.WriteLine("--- modify files:{0}", counter);
@@ -86,10 +103,5 @@ class TestDirectory {
         // string path = "E:/its_rummy/Assets/../z_package\\debug\\rmg_rummy_station_8-3-2_v0.16.6.5_1_20200605_115936.apk";
         // Console.WriteLine("filename: " + Path.GetFileName(path));
 
-        string[] files = Directory.GetFiles("E:/its_rummy/Document/pack_config", "a_packarg_outer_*.json", SearchOption.TopDirectoryOnly);
-        Console.WriteLine("--- len: " + files.Length);
-        foreach (string item in files) {
-            Console.WriteLine("--- item: " + item);
-        }
     }
 }

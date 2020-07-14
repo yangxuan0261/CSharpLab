@@ -63,10 +63,11 @@
     <Compile Include="SensitiveWord\TestWord.cs" />
     <Compile Include="SensitiveWord\WordsSearchEx.cs" />
     <Compile Include="SensitiveWord\WordsSearchResult.cs" />
-    <Compile Include="OtherTest\TestDirectory.cs" />
+    <Compile Include="OtherTest\TestIO.cs" />
     <Compile Include="OtherTest\TestReflection.cs" />
     <Compile Include="OtherTest\TestBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="OtherTest\TestEncrypt.cs" />
     <Compile Include="OtherTest\TestException.cs" />
     <Compile Include="OtherTest\TestContainer.cs" />
     <Compile Include="OtherTest\TestDelegate.cs" />
@@ -92,6 +93,7 @@
     <Compile Include="OtherTest\TestStaticClass.cs" />
     <Compile Include="OtherTest\TestClass.cs" />
     <Compile Include="OtherTest\TestRegex.cs" />
+    <Compile Include="OtherTest\tool\Utils.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

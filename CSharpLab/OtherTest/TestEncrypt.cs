@@ -9,6 +9,7 @@ using System.Text;
 class TestEncrypt {
 
     // --------------------- aes 
+    // 参考: https://dotblogs.com.tw/jwpl102216/2016/10/23/120443
     public static string aesEncryptBase64(string SrcStr, string CryptoKey) {
         byte[] srcBts = Encoding.UTF8.GetBytes(SrcStr);
         byte[] dstBts = aesEncryptBase64(srcBts, CryptoKey);

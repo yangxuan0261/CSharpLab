@@ -57,6 +57,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="a\LitJson\IJsonWrapper.cs" />
+    <Compile Include="a\LitJson\JsonData.cs" />
+    <Compile Include="a\LitJson\JsonException.cs" />
+    <Compile Include="a\LitJson\JsonMapper.cs" />
+    <Compile Include="a\LitJson\JsonMockWrapper.cs" />
+    <Compile Include="a\LitJson\JsonReader.cs" />
+    <Compile Include="a\LitJson\JsonWriter.cs" />
+    <Compile Include="a\LitJson\Lexer.cs" />
+    <Compile Include="a\LitJson\ParserToken.cs" />
+  </ItemGroup>
+  <ItemGroup>
     <Compile Include="AlgorithmTest\AlgorithmTest.cs" />
     <Compile Include="AlgorithmTest\DynamicPlan.cs" />
     <Compile Include="a_main.cs" />
@@ -64,6 +75,7 @@
     <Compile Include="SensitiveWord\WordsSearchEx.cs" />
     <Compile Include="SensitiveWord\WordsSearchResult.cs" />
     <Compile Include="OtherTest\TestIO.cs" />
+    <Compile Include="OtherTest\TestJson.cs" />
     <Compile Include="OtherTest\TestReflection.cs" />
     <Compile Include="OtherTest\TestBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

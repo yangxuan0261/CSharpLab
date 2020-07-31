@@ -18,7 +18,7 @@ namespace CSharpLab {
             // TestArgs.test1();
             // TestArgs.test2();
             // TestAsync.test1();
-            // TestContainer.main();
+            TestContainer.main();
 
             // TestDelegate.main();
 
@@ -57,7 +57,8 @@ namespace CSharpLab {
             // TestReflection.test4();
 
             // TestIO.main();
-            TestEncrypt.main();
+            // TestEncrypt.main();
+            // TestJson.main();
             // TestWord.test1();
             // AlgorithmTest.test1();
 

@@ -343,6 +343,18 @@ class TestContainer {
         foreach (var item in l2) {
             Console.WriteLine("--- item: " + item);
         }
+
+        int[] arr0 = l1.Select(num => num + 100).ToArray();
+        Console.WriteLine("--- arr2: {0}", Utils.BeautyJson(arr0));
+
+        int[] arr1 = l1.ToArray();
+        Console.WriteLine("--- arr1: {0}", Utils.BeautyJson(arr1));
+    }
+
+    public static void testListFilter() {
+        List<int> l1 = new List<int>(new int[] { 1, 2, 3, 4, 5 });
+        int[] arr2 = l1.Where(num => { return num >= 3; }).ToArray();
+        Console.WriteLine("--- arr2: {0}", Utils.BeautyJson(arr2));
     }
 
     public static void test9() {
@@ -535,7 +547,8 @@ key:4, value:aaa
         // testDict02();
         // testStack();
         // testSortedList();
-        testListConvertAll();
+        // testListConvertAll();
+        testListFilter();
     }
 
 }

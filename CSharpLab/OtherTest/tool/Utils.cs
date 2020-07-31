@@ -53,4 +53,24 @@ class Utils {
         }
         return null;
     }
+
+    public static string BeautyJson(object obj, bool isPretty = true) {
+        LitJson.JsonWriter writer = new LitJson.JsonWriter();
+        writer.PrettyPrint = isPretty;
+        LitJson.JsonMapper.ToJson(obj, writer);
+        return writer.TextWriter.ToString();
+    }
+
+    public static void WriteObj2Json(string path, object obj, bool isPretty = true) {
+        LitJson.JsonWriter writer = new LitJson.JsonWriter();
+        writer.PrettyPrint = isPretty;
+        LitJson.JsonMapper.ToJson(obj, writer);
+        File.WriteAllText(path, writer.TextWriter.ToString());
+    }
+
+    public static T ReadJson<T>(string path) {
+        byte[] content = Utils.ReadAllBytesFromFile(path);
+        string str = System.Text.Encoding.UTF8.GetString(content);
+        return LitJson.JsonMapper.ToObject<T>(str);
+    }
 }

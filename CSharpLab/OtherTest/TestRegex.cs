@@ -61,6 +61,9 @@ public class TestRegex {
         });
         Console.WriteLine("--- res2: {0}", res2); // res2: 紫色版hellohello
 
+
+        string res3 = new Regex(@"(-)\d+(-)").Replace(txt1, string.Format("$1wolegequ$2"), 1); // $1 $2 代表捕获值, $0 是 匹配串
+        Console.WriteLine("--- res3: {0}", res3); // res2: 紫色版hellohello
     }
 
     public static void main() {

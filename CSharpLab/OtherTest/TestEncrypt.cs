@@ -85,7 +85,18 @@ class TestEncrypt {
         Console.WriteLine("--- 还原 ok, json: {0}", json);
     }
 
+    public static void test_aesRead() {
+        string cryptoKey = "U5RNM4beTo%@QmA";
+        string srcDb = "C:/Users/wolegequ/Nox_share/ImageShare/platid.txt";
+
+        byte[] bts = Utils.ReadAllBytesFromFile(srcDb);
+        bts = aesDecryptBase64(bts, cryptoKey);
+        string txt = Utils.BytesToUTF8(bts);
+        Console.WriteLine("--- txt: {0}", txt);
+    }
+
     public static void main() {
-        test_aes();
+        // test_aes();
+        test_aesRead();
     }
 }

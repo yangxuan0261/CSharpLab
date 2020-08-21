@@ -8,32 +8,35 @@ class TestString {
     /// <summary>
     /// Regex Split
     /// </summary>
-    public static void test1() {
+    public static void test_split() {
         string str = "aaajsbbbjsccc";
         string[] sArray = Regex.Split(str, "js", RegexOptions.IgnoreCase);
-        foreach (string i in sArray)
+        foreach (string i in sArray) {
             Console.WriteLine("{0}", i);
-    }
+        }
 
-    /// <summary>
-    /// string Split
-    /// </summary>
-    public static void test2() {
-        string str = "aaajbbbscccjdddseee";
-        string[] sArray = str.Split(new char[2] { 'j', 's' });
-        foreach (string i in sArray)
+        Console.WriteLine();
+        string str2 = "aaajbbbscccjdddseee";
+        string[] sArray2 = str2.Split(new char[2] { 'j', 's' });
+        foreach (string i in sArray2) {
             Console.WriteLine("{0}", i);
-    }
+        }
 
-    /// <summary>
-    /// string Split
-    /// </summary>
-    public static void test3() {
-        string str = "aaajbbbjccc";
+        Console.WriteLine();
+        string str3 = "aaajbbbjccc";
         string sp = "j";
-        string[] sArray = str.Split(sp.ToArray<char>());
-        foreach (string i in sArray)
+        string[] sArray3 = str3.Split(sp.ToArray<char>());
+        foreach (string i in sArray3) {
             Console.WriteLine("{0}", i);
+        }
+
+        Console.WriteLine();
+        string name = "aaa-bbb";
+        string[] arr = name.Split('#'); // 如果找不到, 那么这个 arr 将会是 一个长度的数组, 元素就是字符串本身, aaa-bbb
+        Console.WriteLine("--- arr not null, len:{0}", arr.Length);
+        foreach (var item in arr) {
+            Console.WriteLine("--- item: {0}", item);
+        }
     }
 
     /// <summary>
@@ -83,18 +86,49 @@ class TestString {
         Console.WriteLine("--- result:{0}", f2);
     }
 
-    public static void test7() {
+    public static void test_format() {
+        // 参考: https://www.cnblogs.com/GreenLeaves/p/9171455.html
         string str = String.Format("[{0}]-avgTime:{1:0.00}ms, avgSize:{2:0.00}kb, cnt:{3}\n", "aaa", 123.456f, 987.654f, 666);
-        Console.WriteLine(str);
-    }
+        Console.WriteLine("--- str: {0}", str);
 
-    public static void test_split() {
-        string name = "aaa-bbb";
-        string[] arr = name.Split('#'); // 如果找不到, 那么这个 arr 将会是 一个长度的数组, 元素就是字符串本身, aaa-bbb
-        Console.WriteLine("--- arr not null, len:{0}", arr.Length);
-        foreach (var item in arr) {
-            Console.WriteLine("--- item: {0}", item);
-        }
+        int number = 100;
+        string outPut1 = $"{number:D5}"; // D一将整形转换成10进制, D5表示将数字转换成十进制,并以零填充保留5位
+        Console.WriteLine("--- outPut1: {0}", outPut1); // 0000000100, 10位, 不足补零
+
+        string outPut2 = $"{number:C6}"; // C一格式化货币, C6代表将数字转换成当前线程国家的货币符号形式的大小并保留6位小数
+        Console.WriteLine("--- outPut2: {0}", outPut2); // 0000000100, 10位, 不足补零
+
+        int number2 = 1000000000;
+        string outPut4 = $"{number2:N3}"; // N一用分号分隔数字,默认三位加一个分号, N3表示将数字转换成以分号分隔的数字,并保留3位小数
+        Console.WriteLine("--- outPut4: {0}", outPut4); // 1,000,000,000.000
+
+        int number3 = 1;
+        string outPut5 = $"{number3:P0}"; // P一将数字转成百分比,默认在百分比后面保留两位小数, P0表示将数字转换成百分比,并保留零位小数
+        Console.WriteLine("--- outPut5: {0}", outPut5); // 100%
+
+        int number4 = 100;
+        string outPut6 = $"{number4:00000}"; // 0一零占位符, 
+        string outPut7 = $"{number:00000.00}";
+        // 00000表示先用0占5个位子,如果要格式化的值在0的位置有一个数字,则此数字被复制到该0的位置处,如果格式化值得长度大于00000的长度,不会舍弃,原样保存.如果小于则用0填充.
+        // .00表示格式化的值的小数部分保留2位,如果第三位大于等于5,则4舍五入.如果小于两位第二位用0填充,以此类推.
+        Console.WriteLine("--- outPut6: {0}", outPut6); // 00100
+        Console.WriteLine("--- outPut7: {0}", outPut7); // 00100.00
+
+        // 空格占位符
+        var number5 = "666";
+        string outPut8 = string.Format("{0,10}", number5);
+        Console.WriteLine("--- $" + outPut8 + "$"); // $       666$
+        string outPut9 = string.Format("{0,-10}", number5);
+        Console.WriteLine("--- $" + outPut9 + "$"); // $666       $
+
+        string outPut10 = number5.PadLeft(10); // 当然PadLeft支持填充自定义字符,空格占位符只能用空格
+        Console.WriteLine("--- $" + outPut10 + "$"); // $       666$
+        string outPut11 = number5.PadRight(10);
+        Console.WriteLine("--- $" + outPut11 + "$"); // $666       $
+
+        var now = DateTime.Now;
+        var outPut12 = $"{now:yyyy-MM-dd}";
+        Console.WriteLine("--- outPut12: {0}", outPut12); // 2020-08-16
     }
 
     public enum ERes : int {
@@ -123,5 +157,10 @@ class TestString {
         Console.WriteLine(string.Format("--- b1: {0}", b1));
         ERes e2 = (ERes) 2;
         Console.WriteLine(string.Format("--- e2: {0}", e2));
+    }
+
+    public static void main() {
+        // test_split();
+        test_format();
     }
 }

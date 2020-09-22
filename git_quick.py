@@ -15,7 +15,7 @@ if __name__ == "__main__":
     sys.path.append(PythonPath)  # 引入 python 脚本目录
 
     from tool.git_util import GitUtil
-
-    GitUtil.safeUpdate(SelfPath, "origin", "master")
+    os.chdir(SelfPath)
+    GitUtil().safeUpdate("origin", "master")
     os.system("pause")
     sys.exit(0)

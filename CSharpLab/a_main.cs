@@ -33,7 +33,7 @@ namespace CSharpLab {
             // TestAttribute.test2();
             // TestGetSet.test1();
 
-            TestString.main(); 
+            // TestString.main(); 
 
             // TestGC.test1() ;
             // TestUsing.test1();
@@ -60,7 +60,7 @@ namespace CSharpLab {
             // TestClass.test2();
 
             // TestByte.test1();
-            // TestRegex.main();
+            TestRegex.main();
             Console.ReadKey();
         }
     }

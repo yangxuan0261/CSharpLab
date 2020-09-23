@@ -61,13 +61,24 @@ public class TestRegex {
         });
         Console.WriteLine("--- res2: {0}", res2); // res2: 紫色版hellohello
 
-
         string res3 = new Regex(@"(-)\d+(-)").Replace(txt1, string.Format("$1wolegequ$2"), 1); // $1 $2 代表捕获值, $0 是 匹配串
         Console.WriteLine("--- res3: {0}", res3); // res2: 紫色版hellohello
     }
 
+    private static void test_catch02() {
+        string str1 = "-aAS12=123";
+        // String[] token = Regex.Split(str1, ",");
+        Match mth = new Regex(@"\-(\w+)=(.*)").Match(str1);
+        Console.WriteLine("--- match: {0}", mth.Success);
+
+        if (mth.Success) {
+            Console.WriteLine("--- 1: {0}, 2: {1}", mth.Groups[1].Value, mth.Groups[2].Value);
+        }
+    }
+
     public static void main() {
         // test_catch();
-        test_replace();
+        // test_replace();
+        test_catch02();
     }
 }

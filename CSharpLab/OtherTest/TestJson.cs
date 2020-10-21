@@ -21,11 +21,20 @@ class TestJson {
         str1 = BeautyJson(a1, false);
     }
 
+    public static T Json2Obj<T>(string content) {
+        return LitJson.JsonMapper.ToObject<T>(content);
+    }
+
     public static string BeautyJson(object obj, bool isPretty = true) {
         LitJson.JsonWriter writer = new LitJson.JsonWriter();
         writer.PrettyPrint = isPretty;
         LitJson.JsonMapper.ToJson(obj, writer);
         return writer.TextWriter.ToString();
+    }
+
+    public static string BeautyJson(string str, bool isPretty = true) {
+        object obj = Json2Obj<object>(str);
+        return BeautyJson(obj, isPretty);
     }
 
     public static void WriteObj2Json(string path, object obj, bool isPretty = true) {

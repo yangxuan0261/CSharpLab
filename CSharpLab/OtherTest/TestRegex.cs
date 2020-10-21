@@ -61,8 +61,13 @@ public class TestRegex {
         });
         Console.WriteLine("--- res2: {0}", res2); // res2: 紫色版hellohello
 
-        string res3 = new Regex(@"(-)\d+(-)").Replace(txt1, string.Format("$1wolegequ$2"), 1); // $1 $2 代表捕获值, $0 是 匹配串
+        // 捕获替换 1:
+        string res3 = new Regex(@"(-)\d+(-)").Replace(txt1, string.Format("$1wolegequ$2"), 1); // $1 $2 代表捕获值, $0 是 匹配串, 缺点是不能连着使用 格式化占位符, 比如: string.Format("$1{0}", "aaa) 就会有问题
         Console.WriteLine("--- res3: {0}", res3); // res2: 紫色版hellohello
+
+        // 捕获替换 2: (建议)
+        string res4 = Regex.Replace(txt1, @"(-)\d+(-)", m => m.Groups[1].Value + "hello" + m.Groups[2].Value);
+        Console.WriteLine("--- res4: {0}", res4); // res2: 紫色版hellohello
     }
 
     private static void test_catch02() {
@@ -78,7 +83,7 @@ public class TestRegex {
 
     public static void main() {
         // test_catch();
-        // test_replace();
-        test_catch02();
+        test_replace();
+        // test_catch02();
     }
 }

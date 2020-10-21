@@ -48,7 +48,7 @@ namespace CSharpLab {
             // TestReflection.test3();
             // TestReflection.test4();
 
-            // TestIO.main();
+            TestIO.main();
             // TestEncrypt.main();
             // TestJson.main();
             // TestWord.test1();
@@ -60,7 +60,7 @@ namespace CSharpLab {
             // TestClass.test2();
 
             // TestByte.test1();
-            TestRegex.main();
+            // TestRegex.main();
             Console.ReadKey();
         }
     }

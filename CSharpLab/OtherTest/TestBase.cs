@@ -102,11 +102,20 @@ public class TestBase {
         }
     }
 
+    static void test_random() {
+        Random rnd = new Random(System.Guid.NewGuid().ToString().GetHashCode());
+        for (int i = 0; i < 10; i++) {
+            int num = rnd.Next(1, 3); // 区间: [1, 3)
+            Console.WriteLine(string.Format("--- num: {0}", num));
+        }
+    }
+
     public static void main() {
         // test1();
         // test2();
         // test_bit();
-        test_enum();
+        // test_enum();
+        test_random();
     }
 
 }

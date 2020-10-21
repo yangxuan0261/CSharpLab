@@ -95,13 +95,16 @@ class TestIO {
 
     public static void main() {
         // test_GetFiles();
-        test_copyFile();
+        // test_copyFile();
         // string selDir = "D:\\z_mywiki\\a_csdn_blog";
         // RecurDir(selDir);
         // Console.WriteLine("--- modify files:{0}", counter);
 
         // string path = "E:/its_rummy/Assets/../z_package\\debug\\rmg_rummy_station_8-3-2_v0.16.6.5_1_20200605_115936.apk";
         // Console.WriteLine("filename: " + Path.GetFileName(path));
+
+        string d2 = " E:/its_rummy/Channel/8-3-2/Android/res/drawable";
+        Console.WriteLine("--- ok: {0}", System.IO.Directory.Exists(d2));
 
     }
 }

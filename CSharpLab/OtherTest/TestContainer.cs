@@ -357,29 +357,40 @@ class TestContainer {
         Console.WriteLine("--- arr2: {0}", Utils.BeautyJson(arr2));
     }
 
-    public static void test9() {
+    public static void testLinq() {
         List<string> ht = new List<string>();
         ht.Add("aa");
         ht.Add("bbb");
         ht.Add("cccc");
         ht.Add("dd");
 
+        // select
         List<string> ht2 = ht.Select((item) => { return "new " + item; }).ToList();
         foreach (var p in ht2)
-            Console.WriteLine("--- value:{0}", p);
+            Console.WriteLine("--- value: {0}", p);
 
         Console.WriteLine("");
         string[] ht3 = ht.Select((item) => { return "new " + item; }).ToArray();
         foreach (var p in ht3)
-            Console.WriteLine("--- value:{0}", p);
+            Console.WriteLine("--- value: {0}", p);
 
+        // where
         Console.WriteLine("");
         var result = from i in ht
         where i.Length > 2
         select i;
         var ht4 = result.ToList();
         foreach (var p in ht4)
-            Console.WriteLine("--- value:{0}", p);
+            Console.WriteLine("--- value: {0}", p);
+
+        string[] ht5 = ht.Where((item) => { return item.Length > 2; }).ToArray();
+        foreach (var p in ht4)
+            Console.WriteLine("--- Where: {0}", p);
+
+        // count
+        Console.WriteLine();
+        int num = ht.Count(item => item.Length > 2);
+        Console.WriteLine("--- num: {0}", num);
     }
 
     /// <summary>
@@ -537,10 +548,10 @@ key:4, value:aaa
         // testListDort00();
         // testDictDeleteByVaule();
         // testListDelete();
-        // testListSort();
+        testListSort();
         // testDictDelete();
         // test8();
-        // test9();
+        // testLinq();
         // testQuchong();
         // testDepthCopy();
         // testSortDict01();
@@ -548,7 +559,7 @@ key:4, value:aaa
         // testStack();
         // testSortedList();
         // testListConvertAll();
-        testListFilter();
+        // testListFilter();
     }
 
 }

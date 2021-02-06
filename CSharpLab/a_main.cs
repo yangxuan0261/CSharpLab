@@ -18,7 +18,7 @@ namespace CSharpLab {
             // TestArgs.test1();
             // TestArgs.test2();
             // TestAsync.test1();
-            TestContainer.main();
+            // TestContainer.main();
 
             // TestDelegate.main();
 
@@ -60,7 +60,7 @@ namespace CSharpLab {
             // TestClass.test2();
 
             // TestByte.test1();
-            // TestRegex.main();
+            TestRegex.main();
             Console.ReadKey();
         }
     }

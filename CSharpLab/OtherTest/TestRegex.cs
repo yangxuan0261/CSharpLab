@@ -81,9 +81,23 @@ public class TestRegex {
         }
     }
 
+    // 不包含字符串
+    private static void test_exclude() {
+        string path01 = "E:/its/its_rummy-7324/Assets/Plugins/iOS/plugin.plist";
+        string path02 = "E:/its/its_rummy-7324/Assets/Plugins/iOS/plugin.plist.meta";
+
+        Regex rgx = new Regex(@".*\.plist(?!\.meta)"); // 排除 .meta 后缀的文件, 使用 (?!xxx)
+        Match mth01 = rgx.Match(path01); // true
+        Match mth02 = rgx.Match(path02); // false
+
+        Console.WriteLine("--- mth01: {0}", mth01.Success);
+        Console.WriteLine("--- mth02: {0}", mth02.Success);
+    }
+
     public static void main() {
         // test_catch();
-        test_replace();
+        // test_replace();
         // test_catch02();
+        test_exclude();
     }
 }

@@ -357,6 +357,18 @@ class TestContainer {
         Console.WriteLine("--- arr2: {0}", Utils.BeautyJson(arr2));
     }
 
+    public static void testNoDuplicate() {
+        List<Dog> ht = new List<Dog>();
+        ht.Add(new Dog(12, "aaa"));
+        ht.Add(new Dog(21, "ccc"));
+        ht.Add(new Dog(21, "bbb"));
+        ht.Add(new Dog(32, "aaa"));
+        ht.Add(new Dog(27, "ddd"));
+        ht.Add(new Dog(14, "aaa"));
+        List<Dog> nonDuplicateList2 = ht.Where((x, i) => ht.FindIndex(z => z.name == x.name) == i).ToList();
+        Console.WriteLine("--- nonDuplicateList2: {0}", Utils.BeautyJson(nonDuplicateList2));
+    }
+
     public static void testLinq() {
         List<string> ht = new List<string>();
         ht.Add("aa");
@@ -548,10 +560,11 @@ key:4, value:aaa
         // testListDort00();
         // testDictDeleteByVaule();
         // testListDelete();
-        testListSort();
+        // testListSort();
         // testDictDelete();
         // test8();
-        // testLinq();
+        testLinq();
+        // testNoDuplicate();
         // testQuchong();
         // testDepthCopy();
         // testSortDict01();

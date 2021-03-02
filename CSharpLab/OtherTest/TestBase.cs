@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -110,12 +111,20 @@ public class TestBase {
         }
     }
 
+    static void testFileMove() {
+        string dir01 = @"C:\Users\wilker\Desktop\bbb";
+        string dir02 = @"C:\Users\wilker\Desktop\ccc\ddd";
+        Directory.Move(dir01, dir02);
+        Console.WriteLine("--- move done");
+    }
+
     public static void main() {
         // test1();
         // test2();
         // test_bit();
         // test_enum();
-        test_random();
+        // test_random();
+        testFileMove();
     }
 
 }

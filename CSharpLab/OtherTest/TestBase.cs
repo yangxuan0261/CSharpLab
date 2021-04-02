@@ -118,13 +118,31 @@ public class TestBase {
         Console.WriteLine("--- move done");
     }
 
+    static void testFormat() {
+        // 前面補0的數字字串
+        Console.WriteLine("{0:0000}", 157); //輸出 0157
+
+        // 前後都補0的數字字串
+        Console.WriteLine("{0:0000.0000}", 157.42); //輸出 0157.4200
+
+        // 格式化電話號碼
+        Console.WriteLine("{0:(###) ###-####}", 8005551212); //輸出 (800) 555-1212
+
+        // 不滿特定長度的字串，後面補空白
+        Console.WriteLine("{0,-10}", "Hello"); //「Hello     」
+
+        // 不滿特定長度的字串，前面補空白
+        Console.WriteLine("{0,10}", "Hello"); //「     Hello」
+    }
+
     public static void main() {
         // test1();
         // test2();
         // test_bit();
         // test_enum();
         // test_random();
-        testFileMove();
+        // testFileMove();
+        testFormat();
     }
 
 }

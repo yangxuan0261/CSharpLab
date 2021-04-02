@@ -94,10 +94,20 @@ public class TestRegex {
         Console.WriteLine("--- mth02: {0}", mth02.Success);
     }
 
+    // 批量替换
+    private static void test_multi_replace() {
+        string txt01 = "hello_world_hello_nice_to_meet_you";
+        IDictionary<string, string> map = new Dictionary<string, string>() { { "hello", "aaa" }, { "world", "bbb" }, { "you", "me" } };
+        Regex regex = new Regex(String.Join("|", map.Keys));
+        string txt02 = regex.Replace(txt01, m => map[m.Value]);
+        Console.WriteLine("--- txt02: {0}", txt02);
+    }
+
     public static void main() {
         // test_catch();
         // test_replace();
         // test_catch02();
-        test_exclude();
+        // test_exclude();
+        test_multi_replace();
     }
 }

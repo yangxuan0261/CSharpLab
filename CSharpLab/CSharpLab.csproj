@@ -97,6 +97,7 @@
     <Compile Include="OtherTest\TestInterface.cs" />
     <Compile Include="OtherTest\TestUsing.cs" />
     <Compile Include="OtherTest\TestString.cs" />
+    <Compile Include="OtherTest\TestThread.cs" />
     <Compile Include="OtherTest\TestOOP.cs" />
     <Compile Include="OtherTest\TestArgs.cs" />
     <Compile Include="OtherTest\TestAsync.cs" />

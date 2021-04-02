@@ -61,6 +61,7 @@ namespace CSharpLab {
 
             // TestByte.test1();
             // TestRegex.main();
+            // TestThread.main();
             Console.ReadKey();
         }
     }

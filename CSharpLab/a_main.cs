@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace CSharpLab {
     class a_main {
         static void Main(string[] args) {
-            TestBase.main();
+            // TestBase.main();
             // TestGeneric.main();
             // TestOOP.test1();
 
@@ -33,7 +33,7 @@ namespace CSharpLab {
             // TestAttribute.test2();
             // TestGetSet.test1();
 
-            // TestString.main(); 
+            TestString.main(); 
 
             // TestGC.test1() ;
             // TestUsing.test1();
@@ -62,6 +62,7 @@ namespace CSharpLab {
             // TestByte.test1();
             // TestRegex.main();
             // TestThread.main();
+
             Console.ReadKey();
         }
     }

@@ -563,7 +563,7 @@ key:4, value:aaa
         // testListSort();
         // testDictDelete();
         // test8();
-        testLinq();
+        // testLinq();
         // testNoDuplicate();
         // testQuchong();
         // testDepthCopy();

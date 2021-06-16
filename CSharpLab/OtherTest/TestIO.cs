@@ -93,6 +93,14 @@ class TestIO {
         File.Move(path2, path2 + ".bytes");
     }
 
+    public static void test_getTopDir() {
+        string rootDir = @"E:\its\rummy-v2\Channel";
+        string[] dirArr = Directory.GetDirectories(rootDir, "*", SearchOption.TopDirectoryOnly);
+        foreach (string dir in dirArr) {
+            Console.WriteLine("--- dir: {0}, name: {1}", dir, Path.GetFileNameWithoutExtension(dir));
+        }
+    }
+
     public static void main() {
         // test_GetFiles();
         // test_copyFile();
@@ -103,8 +111,8 @@ class TestIO {
         // string path = "E:/its_rummy/Assets/../z_package\\debug\\rmg_rummy_station_8-3-2_v0.16.6.5_1_20200605_115936.apk";
         // Console.WriteLine("filename: " + Path.GetFileName(path));
 
-        string d2 = " E:/its_rummy/Channel/8-3-2/Android/res/drawable";
-        Console.WriteLine("--- ok: {0}", System.IO.Directory.Exists(d2));
-
+        // string d2 = " E:/its_rummy/Channel/8-3-2/Android/res/drawable";
+        // Console.WriteLine("--- ok: {0}", System.IO.Directory.Exists(d2));
+        test_getTopDir();
     }
 }

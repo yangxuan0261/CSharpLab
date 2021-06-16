@@ -37,6 +37,20 @@ class TestString {
         foreach (var item in arr) {
             Console.WriteLine("--- item: {0}", item);
         }
+
+        string sep = "##";
+        string[] strArr = new string[] {
+            "hello",
+            "world",
+            "china"
+        };
+        string msg = String.Join(sep, strArr);
+        Console.WriteLine("--- msg: {0}", msg);
+
+        string[] newArr = msg.Split(new string[] { sep }, StringSplitOptions.None);
+        foreach (string word in newArr) {
+            Console.WriteLine("--- aaa: {0}", word);
+        }
     }
 
     /// <summary>
@@ -121,8 +135,8 @@ class TestString {
         string outPut9 = string.Format("{0,-10}", number5);
         Console.WriteLine("--- $" + outPut9 + "$"); // $666       $
 
-        string outPut10 = number5.PadLeft(10); // 当然PadLeft支持填充自定义字符,空格占位符只能用空格
-        Console.WriteLine("--- $" + outPut10 + "$"); // $       666$
+        string outPut10 = number5.PadLeft(10, '#'); // 当然PadLeft支持填充自定义字符
+        Console.WriteLine("--- $" + outPut10 + "$"); // $#######666$
         string outPut11 = number5.PadRight(10);
         Console.WriteLine("--- $" + outPut11 + "$"); // $666       $
 

@@ -173,8 +173,15 @@ class TestString {
         Console.WriteLine(string.Format("--- e2: {0}", e2));
     }
 
+    private static void test_replace() {
+        string srcStr = "hello123ccc";
+        string newStr = new Regex(@"123").Replace(srcStr, "wolegequ", -1);
+        Console.WriteLine("--- newStr: {0}", newStr);
+    }
+
     public static void main() {
         // test_split();
-        test_format();
+        // test_format();
+        test_replace();
     }
 }

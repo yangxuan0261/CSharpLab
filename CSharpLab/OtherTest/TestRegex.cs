@@ -17,6 +17,12 @@ using System.Text.RegularExpressions;
 (6)"\S"代表任何非空白字符。
 (7)"."代表除换行符(\n)之外的任何字符。
 */
+
+/*
+@字面量字符串中 如果有双引号怎么办？
+就在双引号前面，加一个双引号就好了, 如:
+Regex reg = new Regex(@"[.*?] = ""(.*?)"""); 可以匹配: [EnumUI.Broadcast] = "logic.ui.common", 并捕获 logic.ui.common
+*/
 public class TestRegex {
 
     private static void test_catch() {

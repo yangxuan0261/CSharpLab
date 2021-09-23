@@ -403,6 +403,16 @@ class TestContainer {
         Console.WriteLine();
         int num = ht.Count(item => item.Length > 2);
         Console.WriteLine("--- num: {0}", num);
+
+        // ForEach
+        ht.ForEach(item => { Console.WriteLine("--- num: {0}", item); });
+
+        // ConvertAll
+        List<int> l1 = new List<int>(new int[] { 1, 2, 3 });
+        List<string> l2 = l1.ConvertAll<string>(delegate(int i) { return "hello-" + i.ToString(); });
+        foreach (var item in l2) {
+            Console.WriteLine("--- item: " + item);
+        }
     }
 
     /// <summary>
@@ -563,7 +573,7 @@ key:4, value:aaa
         // testListSort();
         // testDictDelete();
         // test8();
-        // testLinq();
+        testLinq();
         // testNoDuplicate();
         // testQuchong();
         // testDepthCopy();

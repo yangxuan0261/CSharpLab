@@ -18,7 +18,7 @@ namespace CSharpLab {
             // TestArgs.test1();
             // TestArgs.test2();
             // TestAsync.test1();
-            // TestContainer.main();
+            TestContainer.main();
 
             // TestDelegate.main();
 
@@ -33,7 +33,7 @@ namespace CSharpLab {
             // TestAttribute.test2();
             // TestGetSet.test1();
 
-            TestString.main(); 
+            // TestString.main(); 
 
             // TestGC.test1() ;
             // TestUsing.test1();

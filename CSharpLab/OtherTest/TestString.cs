@@ -179,9 +179,27 @@ class TestString {
         Console.WriteLine("--- newStr: {0}", newStr);
     }
 
+    private static void msg(string script, string method, params string[] args) {
+        string txt = string.Format("{0} {1}", script, method);
+        if (args != null && args.Length > 0) {
+            string fmt = "";
+            for (int i = 0; i < args.Length; i++) {
+                fmt += " {" + i + "}";
+            }
+            txt += string.Format(fmt, args);
+        }
+        Console.WriteLine("--- txt: {0}", txt);
+    }
+
+    private static void test_multiArgs() {
+        msg("aaa.py", "say", "hello", "world");
+        msg("bbb.py", "say");
+    }
+
     public static void main() {
         // test_split();
         // test_format();
-        test_replace();
+        // test_replace();
+        test_multiArgs();
     }
 }

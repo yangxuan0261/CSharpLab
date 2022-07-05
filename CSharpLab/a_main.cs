@@ -33,9 +33,10 @@ namespace CSharpLab {
             // TestAttribute.test2();
             // TestGetSet.test1();
 
-            TestString.main(); 
+            // TestString.main(); 
 
-            // TestGC.test1() ;
+            TestFile.main();
+            // TestGC.test1();
             // TestUsing.test1();
             // TestUsing.test2();
             // TestTime.test1();

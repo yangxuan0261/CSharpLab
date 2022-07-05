@@ -83,6 +83,7 @@
     <Compile Include="OtherTest\TestException.cs" />
     <Compile Include="OtherTest\TestContainer.cs" />
     <Compile Include="OtherTest\TestDelegate.cs" />
+    <Compile Include="OtherTest\TestFile.cs" />
     <Compile Include="OtherTest\TestGC.cs" />
     <Compile Include="OtherTest\TestLambda.cs" />
     <Compile Include="OtherTest\TestCondictional.cs" />

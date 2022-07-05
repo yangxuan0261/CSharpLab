@@ -73,4 +73,19 @@ class Utils {
         string str = System.Text.Encoding.UTF8.GetString(content);
         return LitJson.JsonMapper.ToObject<T>(str);
     }
+
+    public static string GetDesktop(params string[] paths) {
+        string desktop = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+        if (paths == null || paths.Length == 0) {
+            return Join(desktop);
+        } else {
+            string relaPath = Path.Combine(paths);
+            return Join(desktop, relaPath);
+        }
+    }
+
+    // 返回绝对路径
+    public static string Join(params string[] paths) {
+        return Path.GetFullPath(Path.Combine(paths)).Replace("\\", "/");
+    }
 }
